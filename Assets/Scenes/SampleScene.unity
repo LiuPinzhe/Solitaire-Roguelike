@@ -564,7 +564,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1664028713}
+  - {fileID: 2137012831}
   - {fileID: 1740378975}
   - {fileID: 1758125719}
   - {fileID: 1741875849}
@@ -1416,6 +1416,8 @@ MonoBehaviour:
   stockPile: {fileID: 2006849994}
   wastePile: {fileID: 1680818277}
   cardPrefab: {fileID: 4780273790040297525, guid: b40925aa22bb21647a1da3923550429f, type: 3}
+  batPrefab: {fileID: 7407611369771834921, guid: f4cb769ef755cd74793c38e5a2636d2b, type: 3}
+  enemySpawnPoint: {fileID: 1664028713}
 --- !u!1 &1303465798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,8 +1519,8 @@ GameObject:
   - component: {fileID: 1664028713}
   - component: {fileID: 1664028717}
   - component: {fileID: 1664028716}
-  - component: {fileID: 1664028715}
   - component: {fileID: 1664028714}
+  - component: {fileID: 1664028718}
   m_Layer: 0
   m_Name: EnemyAvatar
   m_TagString: Untagged
@@ -1533,12 +1535,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664028712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 333000816}
+  m_Father: {fileID: 2137012831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1557,24 +1559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79dafe3d970f8448973050663f902b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1664028715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664028712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a70f518dd35bfdf41978d0125726c63f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  healthText: {fileID: 1758125720}
-  damageText: {fileID: 1741875850}
-  enemyImage: {fileID: 1664028716}
 --- !u!114 &1664028716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +1597,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664028712}
   m_CullTransparentMesh: 1
+--- !u!114 &1664028718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664028712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94640668fde516e4a8d00a101e6e0676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  healthText: {fileID: 1758125720}
+  damageText: {fileID: 0}
+  enemyImage: {fileID: 1664028716}
 --- !u!1 &1680818276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2675,42 @@ RectTransform:
   - {fileID: 1723414394}
   - {fileID: 235607809}
   m_Father: {fileID: 1967974793}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2137012830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137012831}
+  m_Layer: 0
+  m_Name: Avatar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2137012831
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137012830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1664028713}
+  m_Father: {fileID: 333000816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

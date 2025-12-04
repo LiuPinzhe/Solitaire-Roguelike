@@ -24,7 +24,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (cardImage == null)
             cardImage = GetComponent<Image>();
         UpdateCardDisplay();
-        Debug.Log("Set card: " + card.GetCardName() + ", sprite: " + (card.cardSprite != null ? card.cardSprite.name : "null"));
+        // Debug.Log("Set card: " + card.GetCardName() + ", sprite: " + (card.cardSprite != null ? card.cardSprite.name : "null"));
     }
     
     public void RevealCard()
@@ -46,12 +46,12 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             if (isRevealed && cardData.cardSprite != null)
             {
                 cardImage.sprite = cardData.cardSprite;
-                Debug.Log("Displaying card sprite: " + cardData.cardSprite.name);
+                // Debug.Log("Displaying card sprite: " + cardData.cardSprite.name);
             }
             else if (cardBackSprite != null)
             {
                 cardImage.sprite = cardBackSprite;
-                Debug.Log("Displaying card back sprite: " + cardBackSprite.name);
+                // Debug.Log("Displaying card back sprite: " + cardBackSprite.name);
             }
             else
             {
@@ -109,7 +109,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             card.transform.SetAsLastSibling();
         }
         
-        Debug.Log($"Dragging sequence of {draggedSequence.Count} cards starting with {GetCard().GetCardName()}");
+        // Debug.Log($"Dragging sequence of {draggedSequence.Count} cards starting with {GetCard().GetCardName()}");
     }
     
     public void OnDrag(PointerEventData eventData)
@@ -145,23 +145,23 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         var raycastResults = new System.Collections.Generic.List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, raycastResults);
         
-        Debug.Log($"Raycast found {raycastResults.Count} results");
+        // Debug.Log($"Raycast found {raycastResults.Count} results");
         
         foreach (var result in raycastResults)
         {
-            Debug.Log($"Raycast hit: {result.gameObject.name} (has Image: {result.gameObject.GetComponent<Image>() != null})");
+            // Debug.Log($"Raycast hit: {result.gameObject.name} (has Image: {result.gameObject.GetComponent<Image>() != null})");
             DropZone dropZone = result.gameObject.GetComponent<DropZone>();
             EnemyDropZone enemyDropZone = result.gameObject.GetComponent<EnemyDropZone>();
             
             if (dropZone != null)
             {
-                Debug.Log($"Found DropZone: {dropZone.name}");
+                // Debug.Log($"Found DropZone: {dropZone.name}");
                 validDrop = dropZone.TryDropCard(this);
                 if (validDrop) break;
             }
             else if (enemyDropZone != null)
             {
-                Debug.Log($"Found EnemyDropZone: {enemyDropZone.name}");
+                // Debug.Log($"Found EnemyDropZone: {enemyDropZone.name}");
                 enemyDropZone.OnDrop(eventData);
                 validDrop = true;
                 break;
@@ -170,7 +170,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         
         if (raycastResults.Count == 0)
         {
-            Debug.LogWarning("No raycast results! Make sure target objects have Image components with Raycast Target enabled.");
+            // Debug.LogWarning("No raycast results! Make sure target objects have Image components with Raycast Target enabled.");
         }
         
         if (!validDrop)
@@ -184,7 +184,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 card.canvasGroup.blocksRaycasts = true;
                 card.canvasGroup.alpha = 1f;
             }
-            Debug.Log("Invalid drop, returning sequence to original positions");
+            // Debug.Log("Invalid drop, returning sequence to original positions");
         }
         else
         {
@@ -194,7 +194,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 card.canvasGroup.blocksRaycasts = true;
                 card.canvasGroup.alpha = 1f;
             }
-            Debug.Log("Valid drop completed for sequence");
+            // Debug.Log("Valid drop completed for sequence");
         }
         
         draggedSequence.Clear();
