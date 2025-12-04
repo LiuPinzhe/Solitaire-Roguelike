@@ -19,19 +19,19 @@ public class Deck : MonoBehaviour
         cards.Clear();
         Debug.Log("Initializing deck...");
         
+        LoadClassicCards();
+        
+        Debug.Log("Deck initialized with " + cards.Count + " cards");
+    }
+    
+    void LoadClassicCards()
+    {
         Sprite[] allSprites = Resources.LoadAll<Sprite>("Classic/ClassicCards");
         Debug.Log("Found " + allSprites.Length + " sprites in Classic folder");
         
-        // 显示前几个sprite的名称
-        for (int j = 0; j < Mathf.Min(8, allSprites.Length); j++)
-        {
-            Debug.Log($"Sprite {j}: {allSprites[j].name}");
-        }
-        
         if (allSprites.Length == 0)
         {
-            Debug.LogError("No sprites found in Resources/ForestCards! Make sure the sprites are in the correct folder.");
-            // 创建测试卡牌
+            Debug.LogError("No sprites found in Resources/Classic/ClassicCards!");
             CreateTestCards();
             return;
         }
@@ -52,26 +52,60 @@ public class Deck : MonoBehaviour
             int spriteIndex = int.Parse(spriteName.Replace("ClassicCards_", ""));
             
             // 特殊排列：0-25是红心黑桃，26-51是草花方片
-            int rank = (spriteIndex / 2) % 13 + 1;  // 点数：每2张一个点数
+            int rank = (spriteIndex / 2) % 13 + 1;
             int suit;
             
             if (spriteIndex < 26) {
-                // 0-25: 红心和黑桃
-                suit = (spriteIndex % 2 == 0) ? 0 : 3; // 0=红心(Hearts), 3=黑桃(Spades)
+                suit = (spriteIndex % 2 == 0) ? 0 : 3; // 0=红心, 3=黑桃
             } else {
-                // 26-51: 草花和方片
-                suit = ((spriteIndex - 26) % 2 == 0) ? 2 : 1; // 2=草花(Clubs), 1=方片(Diamonds)
+                suit = ((spriteIndex - 26) % 2 == 0) ? 2 : 1; // 2=草花, 1=方片
             }
             
-            Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite);
+            Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Classic");
             cards.Add(newCard);
-            
-            // 特别检查几个关键的sprite
-            if (i < 16 || spriteIndex == 44 || spriteIndex == 40 || spriteIndex == 36)
-                Debug.Log($"Sprite {spriteIndex} ({cardSprite.name}) -> {newCard.GetCardName()} (rank={rank}, suit={suit})");
+        }
+    }
+    
+    void LoadForestCards()
+    {
+        Sprite[] allSprites = Resources.LoadAll<Sprite>("Forest/ForestCards");
+        Debug.Log("Found " + allSprites.Length + " sprites in Forest folder");
+        
+        if (allSprites.Length == 0)
+        {
+            Debug.LogError("No sprites found in Resources/Forest/ForestCards!");
+            CreateTestCards();
+            return;
         }
         
-        Debug.Log("Deck initialized with " + cards.Count + " cards");
+        // 按sprite名称排序确保正确顺序
+        System.Array.Sort(allSprites, (x, y) => {
+            int xNum = int.Parse(x.name.Replace("ForestCards_", ""));
+            int yNum = int.Parse(y.name.Replace("ForestCards_", ""));
+            return xNum.CompareTo(yNum);
+        });
+        
+        for (int i = 0; i < 52 && i < allSprites.Length; i++)
+        {
+            Sprite cardSprite = allSprites[i];
+            
+            // 根据sprite名称中的数字确定卡牌
+            string spriteName = cardSprite.name;
+            int spriteIndex = int.Parse(spriteName.Replace("ForestCards_", ""));
+            
+            // 使用相同的映射逻辑
+            int rank = (spriteIndex / 2) % 13 + 1;
+            int suit;
+            
+            if (spriteIndex < 26) {
+                suit = (spriteIndex % 2 == 0) ? 0 : 3; // 0=红心, 3=黑桃
+            } else {
+                suit = ((spriteIndex - 26) % 2 == 0) ? 2 : 1; // 2=草花, 1=方片
+            }
+            
+            Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Forest");
+            cards.Add(newCard);
+        }
     }
     
     void CreateTestCards()

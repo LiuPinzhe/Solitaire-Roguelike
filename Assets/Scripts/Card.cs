@@ -9,12 +9,14 @@ public class Card
     public Suit suit;
     public Rank rank;
     public Sprite cardSprite;
+    public string set;
     
-    public Card(Suit suit, Rank rank, Sprite sprite)
+    public Card(Suit suit, Rank rank, Sprite sprite, string cardSet = "Classic")
     {
         this.suit = suit;
         this.rank = rank;
         this.cardSprite = sprite;
+        this.set = cardSet;
     }
     
     public string GetCardName()
