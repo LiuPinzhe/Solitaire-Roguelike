@@ -341,6 +341,17 @@ public class SolitaireGameManager : MonoBehaviour
     
     public void MoveCard(CardDisplay cardDisplay, DropZone.ZoneType zoneType, int zoneIndex)
     {
+        // 记录来源列
+        int sourceColumn = -1;
+        for (int i = 0; i < tableau.Count; i++)
+        {
+            if (tableau[i].Contains(cardDisplay))
+            {
+                sourceColumn = i;
+                break;
+            }
+        }
+        
         // 从原位置移除
         RemoveCardFromCurrentLocation(cardDisplay);
         
@@ -349,11 +360,22 @@ public class SolitaireGameManager : MonoBehaviour
         {
             case DropZone.ZoneType.Foundation:
                 foundations[zoneIndex].Add(cardDisplay);
+                // 设置Foundation中卡牌的位置
+                cardDisplay.transform.SetParent(foundationPiles[zoneIndex], false);
+                RectTransform cardRect = cardDisplay.GetComponent<RectTransform>();
+                cardRect.anchoredPosition = Vector2.zero;
+                cardRect.sizeDelta = new Vector2(46f, 70f);
                 break;
             case DropZone.ZoneType.Tableau:
                 tableau[zoneIndex].Add(cardDisplay);
                 CheckAndRevealTopCard(zoneIndex);
                 break;
+        }
+        
+        // 检查来源列是否需要翻开新的顶牌
+        if (sourceColumn >= 0)
+        {
+            CheckAndRevealTopCard(sourceColumn);
         }
     }
     
