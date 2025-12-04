@@ -21,4 +21,14 @@ public class Card
     {
         return $"{rank} of {suit}";
     }
+    
+    public bool IsRed()
+    {
+        return suit == Suit.Hearts || suit == Suit.Diamonds;
+    }
+    
+    public bool IsBlack()
+    {
+        return suit == Suit.Clubs || suit == Suit.Spades;
+    }
 }
