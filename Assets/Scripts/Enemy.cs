@@ -26,6 +26,20 @@ public class Enemy : MonoBehaviour
             enemyImage = GetComponent<Image>();
         }
         
+        // 自动查找UI元素
+        if (healthBar == null)
+        {
+            healthBar = GameObject.Find("HealthBar")?.GetComponent<Image>();
+        }
+        if (healthText == null)
+        {
+            healthText = GameObject.Find("HealthText")?.GetComponent<Text>();
+        }
+        if (damageText == null)
+        {
+            damageText = GameObject.Find("DamageText")?.GetComponent<Text>();
+        }
+        
         UpdateHealthUI();
         InitializeEnemy();
     }
@@ -161,5 +175,11 @@ public class Enemy : MonoBehaviour
     public bool IsAlive()
     {
         return currentHealth > 0;
+    }
+    
+    public void ResetEnemy()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthUI();
     }
 }

@@ -398,39 +398,7 @@ public class SolitaireGameManager : MonoBehaviour
     {
         if (batPrefab != null && enemySpawnPoint != null)
         {
-            // 获取原有的UI元素引用
-            Enemy oldEnemy = enemySpawnPoint.GetComponent<Enemy>();
-            Image healthBar = null;
-            Text healthText = null;
-            Text damageText = null;
-            
-            if (oldEnemy != null)
-            {
-                // 通过反射获取私有字段
-                var healthBarField = typeof(Enemy).GetField("healthBar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                var healthTextField = typeof(Enemy).GetField("healthText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                var damageTextField = typeof(Enemy).GetField("damageText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                
-                healthBar = healthBarField?.GetValue(oldEnemy) as Image;
-                healthText = healthTextField?.GetValue(oldEnemy) as Text;
-                damageText = damageTextField?.GetValue(oldEnemy) as Text;
-            }
-            
             GameObject newBat = Instantiate(batPrefab, enemySpawnPoint);
-            Enemy newEnemy = newBat.GetComponent<Enemy>();
-            
-            if (newEnemy != null)
-            {
-                // 设置UI引用
-                var healthBarField = typeof(Enemy).GetField("healthBar", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                var healthTextField = typeof(Enemy).GetField("healthText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                var damageTextField = typeof(Enemy).GetField("damageText", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                
-                healthBarField?.SetValue(newEnemy, healthBar);
-                healthTextField?.SetValue(newEnemy, healthText);
-                damageTextField?.SetValue(newEnemy, damageText);
-            }
-            
             newBat.SetActive(true);
         }
     }
