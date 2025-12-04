@@ -1418,6 +1418,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 4780273790040297525, guid: b40925aa22bb21647a1da3923550429f, type: 3}
   batPrefab: {fileID: 7407611369771834921, guid: f4cb769ef755cd74793c38e5a2636d2b, type: 3}
   jokerPrefab: {fileID: 822818647750258359, guid: ee1fbc80449f40d4cb2243783abdad8d, type: 3}
+  joker2Prefab: {fileID: 822818647750258359, guid: e2dc9ac60892f2a428a721689d932d3a, type: 3}
   enemySpawnPoint: {fileID: 2137012831}
   handArea: {fileID: 19275364}
 --- !u!1 &1303465798

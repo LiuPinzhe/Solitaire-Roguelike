@@ -16,6 +16,7 @@ public class SolitaireGameManager : MonoBehaviour
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject batPrefab;
     [SerializeField] private GameObject jokerPrefab;
+    [SerializeField] private GameObject joker2Prefab;
     
     [Header("Enemy System")]
     [SerializeField] private Transform enemySpawnPoint;
@@ -29,6 +30,8 @@ public class SolitaireGameManager : MonoBehaviour
     private List<CardDisplay> stock = new List<CardDisplay>();
     private List<CardDisplay> waste = new List<CardDisplay>();
     private bool cardSelectionMode = false;
+    private bool cardSwapMode = false;
+    private CardDisplay firstSelectedCard = null;
     
     void Start()
     {
@@ -398,10 +401,19 @@ public class SolitaireGameManager : MonoBehaviour
     
     void InitializeHandArea()
     {
-        if (handArea != null && jokerPrefab != null)
+        if (handArea != null)
         {
-            GameObject joker = Instantiate(jokerPrefab, handArea);
-            joker.SetActive(true);
+            if (jokerPrefab != null)
+            {
+                GameObject joker = Instantiate(jokerPrefab, handArea);
+                joker.SetActive(true);
+            }
+            
+            if (joker2Prefab != null)
+            {
+                GameObject joker2 = Instantiate(joker2Prefab, handArea);
+                joker2.SetActive(true);
+            }
         }
     }
     
@@ -450,6 +462,12 @@ public class SolitaireGameManager : MonoBehaviour
         {
             CheckForCancelClick();
         }
+        
+        // 在交换模式下检测点击
+        if (cardSwapMode && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            CheckForCancelSwap();
+        }
     }
     
     void CheckForCancelClick()
@@ -492,6 +510,109 @@ public class SolitaireGameManager : MonoBehaviour
             // 退出选择模式
             cardSelectionMode = false;
             Debug.Log($"[GameManager] Card selection mode canceled");
+        }
+    }
+    
+    // Joker2 交换功能
+    public void EnterCardSwapMode()
+    {
+        cardSwapMode = true;
+        firstSelectedCard = null;
+    }
+    
+    public bool IsInCardSwapMode()
+    {
+        return cardSwapMode;
+    }
+    
+    public void SelectCardForSwap(CardDisplay cardDisplay)
+    {
+        if (!cardSwapMode) return;
+        
+        if (firstSelectedCard == null)
+        {
+            // 选择第一张牌
+            firstSelectedCard = cardDisplay;
+            cardDisplay.GetComponent<Image>().color = Color.yellow; // 高亮显示
+        }
+        else if (firstSelectedCard == cardDisplay)
+        {
+            // 取消选择
+            cardDisplay.GetComponent<Image>().color = Color.white;
+            firstSelectedCard = null;
+        }
+        else
+        {
+            // 选择第二张牌，执行交换
+            SwapCards(firstSelectedCard, cardDisplay);
+            
+            // 重置状态
+            firstSelectedCard.GetComponent<Image>().color = Color.white;
+            firstSelectedCard = null;
+            
+            // 重置Joker2并退出交换模式
+            Joker2 joker2 = FindObjectOfType<Joker2>();
+            if (joker2 != null)
+            {
+                joker2.ResetJoker2();
+            }
+            cardSwapMode = false;
+        }
+    }
+    
+    void SwapCards(CardDisplay card1, CardDisplay card2)
+    {
+        // 交换卡牌数据
+        Card tempCard = card1.GetCard();
+        Sprite tempSprite = card1.GetComponent<Image>().sprite;
+        
+        card1.SetCard(card2.GetCard());
+        card2.SetCard(tempCard);
+    }
+    
+    void CheckForCancelSwap()
+    {
+        // 检查点击是否命中了卡牌
+        var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
+        var eventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
+        eventData.position = Mouse.current.position.ReadValue();
+        UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, raycastResults);
+        
+        bool hitCard = false;
+        foreach (var result in raycastResults)
+        {
+            if (result.gameObject.GetComponent<CardDisplay>() != null)
+            {
+                hitCard = true;
+                break;
+            }
+        }
+        
+        if (!hitCard)
+        {
+            CancelCardSwap();
+        }
+    }
+    
+    public void CancelCardSwap()
+    {
+        if (cardSwapMode)
+        {
+            // 重置选中的牌
+            if (firstSelectedCard != null)
+            {
+                firstSelectedCard.GetComponent<Image>().color = Color.white;
+                firstSelectedCard = null;
+            }
+            
+            // 重置Joker2状态
+            Joker2 joker2 = FindObjectOfType<Joker2>();
+            if (joker2 != null)
+            {
+                joker2.ResetJoker2();
+            }
+            
+            cardSwapMode = false;
         }
     }
 }

@@ -82,12 +82,21 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
-        // 检查是否在Joker选择模式
         SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
+        
+        // 检查是否在Joker选择模式
         if (gm != null && gm.IsInCardSelectionMode())
         {
             Debug.Log($"[CardDisplay] Card clicked in selection mode: {GetCard().GetCardName()}");
             gm.SelectCardForRemoval(this);
+            return;
+        }
+        
+        // 检查是否在Joker2交换模式
+        if (gm != null && gm.IsInCardSwapMode())
+        {
+            Debug.Log($"[CardDisplay] Card clicked in swap mode: {GetCard().GetCardName()}");
+            gm.SelectCardForSwap(this);
             return;
         }
     }
@@ -137,9 +146,9 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
-        // 在Joker选择模式下不允许拖拽
+        // 在Joker模式下不允许拖拽
         SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
-        if (gm != null && gm.IsInCardSelectionMode())
+        if (gm != null && (gm.IsInCardSelectionMode() || gm.IsInCardSwapMode()))
         {
             return;
         }
@@ -163,9 +172,9 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
-        // 在Joker选择模式下不处理拖拽结束
+        // 在Joker模式下不处理拖拽结束
         SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
-        if (gm != null && gm.IsInCardSelectionMode())
+        if (gm != null && (gm.IsInCardSelectionMode() || gm.IsInCardSwapMode()))
         {
             return;
         }
