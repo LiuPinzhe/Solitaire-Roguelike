@@ -1,0 +1,1469 @@
+fileFormatVersion: 2
+guid: 56bb413496348ec4391b10960a97d8ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5966546859331317812
+    second: ClassicCardsDark_0
+  - first:
+      213: -6712545505692584965
+    second: ClassicCardsDark_1
+  - first:
+      213: 8823769902963782762
+    second: ClassicCardsDark_2
+  - first:
+      213: 391824822950543056
+    second: ClassicCardsDark_3
+  - first:
+      213: 3781686785868668549
+    second: ClassicCardsDark_4
+  - first:
+      213: 6706774161005087718
+    second: ClassicCardsDark_5
+  - first:
+      213: -2214187822350946679
+    second: ClassicCardsDark_6
+  - first:
+      213: 4524403269141384293
+    second: ClassicCardsDark_7
+  - first:
+      213: 8007559560112125306
+    second: ClassicCardsDark_8
+  - first:
+      213: -4103246847572872694
+    second: ClassicCardsDark_9
+  - first:
+      213: -1219720549352876596
+    second: ClassicCardsDark_10
+  - first:
+      213: -4444520023591070840
+    second: ClassicCardsDark_11
+  - first:
+      213: -3043485590176642507
+    second: ClassicCardsDark_12
+  - first:
+      213: -5034989503965323670
+    second: ClassicCardsDark_13
+  - first:
+      213: -7359570857339979678
+    second: ClassicCardsDark_14
+  - first:
+      213: 3442802693553880095
+    second: ClassicCardsDark_15
+  - first:
+      213: 4601507785341643226
+    second: ClassicCardsDark_16
+  - first:
+      213: -2899044733518126603
+    second: ClassicCardsDark_17
+  - first:
+      213: 2967548099405976491
+    second: ClassicCardsDark_18
+  - first:
+      213: 8101098526591753037
+    second: ClassicCardsDark_19
+  - first:
+      213: -8660286897790427111
+    second: ClassicCardsDark_20
+  - first:
+      213: -4412716599245741638
+    second: ClassicCardsDark_21
+  - first:
+      213: -8152453251649567458
+    second: ClassicCardsDark_22
+  - first:
+      213: -6363386721630465752
+    second: ClassicCardsDark_23
+  - first:
+      213: -3456875011891718684
+    second: ClassicCardsDark_24
+  - first:
+      213: 7673526902578769905
+    second: ClassicCardsDark_25
+  - first:
+      213: 8103020742032298070
+    second: ClassicCardsDark_26
+  - first:
+      213: -4367184801992373012
+    second: ClassicCardsDark_27
+  - first:
+      213: 2030144460928055911
+    second: ClassicCardsDark_28
+  - first:
+      213: -5032774464344721613
+    second: ClassicCardsDark_29
+  - first:
+      213: 2635600747923334869
+    second: ClassicCardsDark_30
+  - first:
+      213: 5918696244233362372
+    second: ClassicCardsDark_31
+  - first:
+      213: 7294682133540904471
+    second: ClassicCardsDark_32
+  - first:
+      213: -8051536024828626280
+    second: ClassicCardsDark_33
+  - first:
+      213: -4322550856001456612
+    second: ClassicCardsDark_34
+  - first:
+      213: -3540129035488324088
+    second: ClassicCardsDark_35
+  - first:
+      213: 1273697324209855311
+    second: ClassicCardsDark_36
+  - first:
+      213: 5893736991005049075
+    second: ClassicCardsDark_37
+  - first:
+      213: -7077761754738438353
+    second: ClassicCardsDark_38
+  - first:
+      213: -4210069554464902560
+    second: ClassicCardsDark_39
+  - first:
+      213: -5905009106144251071
+    second: ClassicCardsDark_40
+  - first:
+      213: 4554583500219777105
+    second: ClassicCardsDark_41
+  - first:
+      213: 1546977190139961841
+    second: ClassicCardsDark_42
+  - first:
+      213: -31570235471970768
+    second: ClassicCardsDark_43
+  - first:
+      213: 2295073137261498333
+    second: ClassicCardsDark_44
+  - first:
+      213: 6142606780098233521
+    second: ClassicCardsDark_45
+  - first:
+      213: -3218369265565966554
+    second: ClassicCardsDark_46
+  - first:
+      213: -2107859740825177501
+    second: ClassicCardsDark_47
+  - first:
+      213: -2591078735241030621
+    second: ClassicCardsDark_48
+  - first:
+      213: 4510709260747092353
+    second: ClassicCardsDark_49
+  - first:
+      213: 2678086499928769537
+    second: ClassicCardsDark_50
+  - first:
+      213: 6216116577519981850
+    second: ClassicCardsDark_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClassicCardsDark_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 107
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf85d95e31923da0800000000000000
+      internalID: -5966546859331317812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf37c8a5d6f38d2a0800000000000000
+      internalID: -6712545505692584965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6470f5f9f3547a70800000000000000
+      internalID: 8823769902963782762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0deb52ab99a007500800000000000000
+      internalID: 391824822950543056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e9d7378104b7430800000000000000
+      internalID: 3781686785868668549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb0a7fb09f331d50800000000000000
+      internalID: 6706774161005087718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ea6c628ef9541e0800000000000000
+      internalID: -2214187822350946679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56cc9cd4dc8e9ce30800000000000000
+      internalID: 4524403269141384293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75344a7ef0902f60800000000000000
+      internalID: 8007559560112125306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a027da86bb65e07c0800000000000000
+      internalID: -4103246847572872694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_10
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5d39a6f9ea21fe0800000000000000
+      internalID: -1219720549352876596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8835ebc2694e152c0800000000000000
+      internalID: -4444520023591070840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a40861bfd53c5d0800000000000000
+      internalID: -3043485590176642507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e935009bf102ab0800000000000000
+      internalID: -5034989503965323670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_14
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268fee44c4d8dd990800000000000000
+      internalID: -7359570857339979678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_15
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c790d1fca47cf20800000000000000
+      internalID: 3442802693553880095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_16
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad9ab7073f6dbdf30800000000000000
+      internalID: 4601507785341643226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_17
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f16fa6bc2684c7d0800000000000000
+      internalID: -2899044733518126603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_18
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba39afe0649de2920800000000000000
+      internalID: 2967548099405976491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_19
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b11ff3032ec6070800000000000000
+      internalID: 8101098526591753037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_20
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9106b3c53fa70d780800000000000000
+      internalID: -8660286897790427111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_21
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1ec7fe1a1e2c2c0800000000000000
+      internalID: -4412716599245741638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_22
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15037f06faacde80800000000000000
+      internalID: -8152453251649567458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_23
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82157c8cd75b0b7a0800000000000000
+      internalID: -6363386721630465752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_24
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 107
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e51543fd76b600d0800000000000000
+      internalID: -3456875011891718684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_25
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 71
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff6c92df08dd7a60800000000000000
+      internalID: 7673526902578769905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6501578ee66b37070800000000000000
+      internalID: 8103020742032298070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec82c89f84a463c0800000000000000
+      internalID: -4367184801992373012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_28
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76af75c81a58c2c10800000000000000
+      internalID: 2030144460928055911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_29
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 337731a1a4ef72ab0800000000000000
+      internalID: -5032774464344721613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_30
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d669bd8ae8839420800000000000000
+      internalID: 2635600747923334869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_31
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbd7f220ee632250800000000000000
+      internalID: 5918696244233362372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_32
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e181760caeb3560800000000000000
+      internalID: 7294682133540904471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_33
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a34dfe4a2334090800000000000000
+      internalID: -8051536024828626280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_34
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16f878f5e63304c0800000000000000
+      internalID: -4322550856001456612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_35
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8061cac066feedec0800000000000000
+      internalID: -3540129035488324088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_36
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bd4e0d7f41da110800000000000000
+      internalID: 1273697324209855311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_37
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f08f642192cac150800000000000000
+      internalID: 5893736991005049075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_38
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f48f30f2db6cd90800000000000000
+      internalID: -7077761754738438353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_39
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062be6ecb04d295c0800000000000000
+      internalID: -4210069554464902560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_40
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14333d801813d0ea0800000000000000
+      internalID: -5905009106144251071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_41
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150847eef81253f30800000000000000
+      internalID: 4554583500219777105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_42
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1ace5ee87f77510800000000000000
+      internalID: 1546977190139961841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_43
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03eb731c907df8ff0800000000000000
+      internalID: -31570235471970768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_44
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf4308cbdcb9df10800000000000000
+      internalID: 2295073137261498333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_45
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b449a2525cee3550800000000000000
+      internalID: 6142606780098233521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_46
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fd7e1643e0653d0800000000000000
+      internalID: -3218369265565966554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_47
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362b4cfcbb06fb2e0800000000000000
+      internalID: -2107859740825177501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_48
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324d3e05e93aa0cd0800000000000000
+      internalID: -2591078735241030621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_49
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18135e38c22499e30800000000000000
+      internalID: 4510709260747092353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_50
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 35
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104060a8b797a2520800000000000000
+      internalID: 2678086499928769537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassicCardsDark_51
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15de75c715144650800000000000000
+      internalID: 6216116577519981850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ClassicCardsDark_0: -5966546859331317812
+      ClassicCardsDark_1: -6712545505692584965
+      ClassicCardsDark_10: -1219720549352876596
+      ClassicCardsDark_11: -4444520023591070840
+      ClassicCardsDark_12: -3043485590176642507
+      ClassicCardsDark_13: -5034989503965323670
+      ClassicCardsDark_14: -7359570857339979678
+      ClassicCardsDark_15: 3442802693553880095
+      ClassicCardsDark_16: 4601507785341643226
+      ClassicCardsDark_17: -2899044733518126603
+      ClassicCardsDark_18: 2967548099405976491
+      ClassicCardsDark_19: 8101098526591753037
+      ClassicCardsDark_2: 8823769902963782762
+      ClassicCardsDark_20: -8660286897790427111
+      ClassicCardsDark_21: -4412716599245741638
+      ClassicCardsDark_22: -8152453251649567458
+      ClassicCardsDark_23: -6363386721630465752
+      ClassicCardsDark_24: -3456875011891718684
+      ClassicCardsDark_25: 7673526902578769905
+      ClassicCardsDark_26: 8103020742032298070
+      ClassicCardsDark_27: -4367184801992373012
+      ClassicCardsDark_28: 2030144460928055911
+      ClassicCardsDark_29: -5032774464344721613
+      ClassicCardsDark_3: 391824822950543056
+      ClassicCardsDark_30: 2635600747923334869
+      ClassicCardsDark_31: 5918696244233362372
+      ClassicCardsDark_32: 7294682133540904471
+      ClassicCardsDark_33: -8051536024828626280
+      ClassicCardsDark_34: -4322550856001456612
+      ClassicCardsDark_35: -3540129035488324088
+      ClassicCardsDark_36: 1273697324209855311
+      ClassicCardsDark_37: 5893736991005049075
+      ClassicCardsDark_38: -7077761754738438353
+      ClassicCardsDark_39: -4210069554464902560
+      ClassicCardsDark_4: 3781686785868668549
+      ClassicCardsDark_40: -5905009106144251071
+      ClassicCardsDark_41: 4554583500219777105
+      ClassicCardsDark_42: 1546977190139961841
+      ClassicCardsDark_43: -31570235471970768
+      ClassicCardsDark_44: 2295073137261498333
+      ClassicCardsDark_45: 6142606780098233521
+      ClassicCardsDark_46: -3218369265565966554
+      ClassicCardsDark_47: -2107859740825177501
+      ClassicCardsDark_48: -2591078735241030621
+      ClassicCardsDark_49: 4510709260747092353
+      ClassicCardsDark_5: 6706774161005087718
+      ClassicCardsDark_50: 2678086499928769537
+      ClassicCardsDark_51: 6216116577519981850
+      ClassicCardsDark_6: -2214187822350946679
+      ClassicCardsDark_7: 4524403269141384293
+      ClassicCardsDark_8: 8007559560112125306
+      ClassicCardsDark_9: -4103246847572872694
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

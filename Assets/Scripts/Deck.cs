@@ -19,8 +19,8 @@ public class Deck : MonoBehaviour
         cards.Clear();
         Debug.Log("Initializing deck...");
         
-        Sprite[] allSprites = Resources.LoadAll<Sprite>("ForestCards");
-        Debug.Log("Found " + allSprites.Length + " sprites");
+        Sprite[] allSprites = Resources.LoadAll<Sprite>("Classic/ClassicCards");
+        Debug.Log("Found " + allSprites.Length + " sprites in Classic folder");
         
         // 显示前几个sprite的名称
         for (int j = 0; j < Mathf.Min(8, allSprites.Length); j++)
@@ -38,8 +38,8 @@ public class Deck : MonoBehaviour
         
         // 按sprite名称排序确保正确顺序
         System.Array.Sort(allSprites, (x, y) => {
-            int xNum = int.Parse(x.name.Replace("ForestCards_", ""));
-            int yNum = int.Parse(y.name.Replace("ForestCards_", ""));
+            int xNum = int.Parse(x.name.Replace("ClassicCards_", ""));
+            int yNum = int.Parse(y.name.Replace("ClassicCards_", ""));
             return xNum.CompareTo(yNum);
         });
         
@@ -49,7 +49,7 @@ public class Deck : MonoBehaviour
             
             // 根据sprite名称中的数字确定卡牌
             string spriteName = cardSprite.name;
-            int spriteIndex = int.Parse(spriteName.Replace("ForestCards_", ""));
+            int spriteIndex = int.Parse(spriteName.Replace("ClassicCards_", ""));
             
             // 特殊排列：0-25是方片和草花，26-51是黑桃和红心
             int rank = (spriteIndex / 2) % 13 + 1;  // 点数：每2张一个点数

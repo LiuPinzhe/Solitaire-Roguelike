@@ -102,7 +102,7 @@ public class SolitaireGameManager : MonoBehaviour
                     cardRect.anchoredPosition = new Vector2(0, -row * cardHeight);
                     
                     // 加载卡背图片
-                    Sprite backSprite = Resources.Load<Sprite>("tree");
+                    Sprite backSprite = Resources.Load<Sprite>("Classic/Backsides/LightClassic");
                     cardDisplay.SetCard(card, backSprite);
                     
                     // 只有最后一张牌翻开
@@ -141,10 +141,14 @@ public class SolitaireGameManager : MonoBehaviour
                     
                     // 库存堆中的牌重叠在一起
                     RectTransform stockCardRect = cardObj.GetComponent<RectTransform>();
+                    
+                    // 设置stock堆中的卡牌尺寸为46*70
+                    stockCardRect.sizeDelta = new Vector2(46f, 70f);
+                    
                     stockCardRect.anchoredPosition = Vector2.zero;
                     
                     // 加载卡背图片
-                    Sprite backSprite = Resources.Load<Sprite>("tree");
+                    Sprite backSprite = Resources.Load<Sprite>("Classic/Backsides/LightClassic");
                     cardDisplay.SetCard(card, backSprite);
                     cardDisplay.HideCard();
                     stock.Add(cardDisplay);
@@ -229,6 +233,16 @@ public class SolitaireGameManager : MonoBehaviour
         }
         
         Debug.Log($"Stock now has {stock.Count} cards remaining");
+    }
+    
+    public void RemoveCardFromGame(CardDisplay cardDisplay)
+    {
+        RemoveCardFromCurrentLocation(cardDisplay);
+    }
+    
+    public void CheckAndRevealAllTopCards()
+    {
+        CheckAndRevealTopCards();
     }
     
     public void MoveCardSequence(List<CardDisplay> sequence, int targetColumnIndex)

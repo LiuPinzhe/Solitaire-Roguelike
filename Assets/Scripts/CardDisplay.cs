@@ -151,11 +151,20 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             Debug.Log($"Raycast hit: {result.gameObject.name} (has Image: {result.gameObject.GetComponent<Image>() != null})");
             DropZone dropZone = result.gameObject.GetComponent<DropZone>();
+            EnemyDropZone enemyDropZone = result.gameObject.GetComponent<EnemyDropZone>();
+            
             if (dropZone != null)
             {
                 Debug.Log($"Found DropZone: {dropZone.name}");
                 validDrop = dropZone.TryDropCard(this);
                 if (validDrop) break;
+            }
+            else if (enemyDropZone != null)
+            {
+                Debug.Log($"Found EnemyDropZone: {enemyDropZone.name}");
+                enemyDropZone.OnDrop(eventData);
+                validDrop = true;
+                break;
             }
         }
         
