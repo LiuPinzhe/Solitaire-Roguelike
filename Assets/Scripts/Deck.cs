@@ -51,16 +51,16 @@ public class Deck : MonoBehaviour
             string spriteName = cardSprite.name;
             int spriteIndex = int.Parse(spriteName.Replace("ClassicCards_", ""));
             
-            // 特殊排列：0-25是方片和草花，26-51是黑桃和红心
+            // 特殊排列：0-25是红心黑桃，26-51是草花方片
             int rank = (spriteIndex / 2) % 13 + 1;  // 点数：每2张一个点数
             int suit;
             
             if (spriteIndex < 26) {
-                // 0-25: 方片和草花
-                suit = (spriteIndex % 2 == 0) ? 1 : 2; // 0=方片(Diamonds), 1=草花(Clubs)
+                // 0-25: 红心和黑桃
+                suit = (spriteIndex % 2 == 0) ? 0 : 3; // 0=红心(Hearts), 3=黑桃(Spades)
             } else {
-                // 26-51: 黑桃和红心
-                suit = ((spriteIndex - 26) % 2 == 0) ? 3 : 0; // 0=黑桃(Spades), 1=红心(Hearts)
+                // 26-51: 草花和方片
+                suit = ((spriteIndex - 26) % 2 == 0) ? 2 : 1; // 2=草花(Clubs), 1=方片(Diamonds)
             }
             
             Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite);

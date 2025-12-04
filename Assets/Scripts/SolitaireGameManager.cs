@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
+using System.Collections;
 
 public class SolitaireGameManager : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class SolitaireGameManager : MonoBehaviour
     private bool cardSelectionMode = false;
     private bool cardSwapMode = false;
     private CardDisplay firstSelectedCard = null;
+    private bool isDealing = false;
     
     void Start()
     {
@@ -165,6 +168,14 @@ public class SolitaireGameManager : MonoBehaviour
                     Sprite backSprite = Resources.Load<Sprite>("Classic/Backsides/LightClassic");
                     cardDisplay.SetCard(card, backSprite);
                     cardDisplay.HideCard();
+                    
+                    // 禁用Raycast Target避免阻挡点击
+                    Image cardImage = cardDisplay.GetComponent<Image>();
+                    if (cardImage != null)
+                    {
+                        cardImage.raycastTarget = false;
+                    }
+                    
                     stock.Add(cardDisplay);
                 }
             }
@@ -197,14 +208,24 @@ public class SolitaireGameManager : MonoBehaviour
     
     public void DrawFromStock()
     {
-        // 检查stock是否有足够的牌（至少7张）
+        if (isDealing)
+        {
+            return; // 正在发牌，忽略点击
+        }
+        
         if (stock.Count < 7)
         {
             Debug.LogWarning($"Not enough cards in stock! Only {stock.Count} cards remaining.");
             return;
         }
         
-        // 给每列发一张牌（包括空列）
+        StartCoroutine(AnimateCardDealing());
+    }
+    
+    IEnumerator AnimateCardDealing()
+    {
+        isDealing = true;
+        
         for (int col = 0; col < 7; col++)
         {
             if (stock.Count > 0)
@@ -212,28 +233,52 @@ public class SolitaireGameManager : MonoBehaviour
                 CardDisplay card = stock[stock.Count - 1];
                 stock.RemoveAt(stock.Count - 1);
                 
-                // 移动到对应列的顶部
-                card.transform.SetParent(tableauColumns[col], false);
+                // 记录原始位置
+                Vector3 startPos = card.transform.position;
                 
-                // 设置位置和尺寸
+                // 局部变量避免闭包问题
+                int targetColumn = col;
+                
+                // 设置目标位置
+                card.transform.SetParent(tableauColumns[targetColumn], false);
                 RectTransform cardRect = card.GetComponent<RectTransform>();
-                
-                // 设置卡牌尺寸为46*70
                 cardRect.sizeDelta = new Vector2(46f, 70f);
                 
                 float cardHeight = 30f;
-                int cardCount = tableau[col].Count;
+                int cardCount = tableau[targetColumn].Count;
                 
                 cardRect.anchorMin = new Vector2(0.5f, 1f);
                 cardRect.anchorMax = new Vector2(0.5f, 1f);
                 cardRect.pivot = new Vector2(0.5f, 1f);
-                cardRect.anchoredPosition = new Vector2(0, -cardCount * cardHeight);
                 
-                // 翻开卡牌并添加到列中
-                card.RevealCard();
-                tableau[col].Add(card);
+                Vector2 targetPos = new Vector2(0, -cardCount * cardHeight);
+                
+                // 设置初始位置为stock位置
+                cardRect.position = startPos;
+                
+                // 动画移动到目标位置
+                cardRect.DOAnchorPos(targetPos, 0.3f)
+                    .SetEase(Ease.OutQuad)
+                    .OnComplete(() => {
+                        card.RevealCard();
+                        tableau[targetColumn].Add(card);
+                        
+                        // 重新启用Raycast Target
+                        Image cardImage = card.GetComponent<Image>();
+                        if (cardImage != null)
+                        {
+                            cardImage.raycastTarget = true;
+                        }
+                    });
+                
+                // 等待一小段时间再发下一张牌
+                yield return new WaitForSeconds(0.1f);
             }
         }
+        
+        // 等待所有动画完成
+        yield return new WaitForSeconds(0.3f);
+        isDealing = false;
     }
     
     public void RemoveCardFromGame(CardDisplay cardDisplay)
