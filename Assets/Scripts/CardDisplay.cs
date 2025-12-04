@@ -99,10 +99,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
         
         // 设置所有被拖拽的牌
+        Canvas canvas = GetComponentInParent<Canvas>();
         foreach (CardDisplay card in draggedSequence)
         {
             card.canvasGroup.blocksRaycasts = false;
             card.canvasGroup.alpha = 0.8f;
+            // 移到Canvas的顶层而不是父对象的顶层
+            card.transform.SetParent(canvas.transform, true);
             card.transform.SetAsLastSibling();
         }
         
@@ -167,8 +170,8 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             for (int i = 0; i < draggedSequence.Count; i++)
             {
                 CardDisplay card = draggedSequence[i];
+                card.transform.SetParent(startParent, false);
                 card.transform.position = originalPositions[i];
-                card.transform.SetParent(startParent);
                 card.canvasGroup.blocksRaycasts = true;
                 card.canvasGroup.alpha = 1f;
             }
