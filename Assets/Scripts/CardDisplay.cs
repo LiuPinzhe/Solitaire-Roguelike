@@ -51,6 +51,11 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             else if (cardBackSprite != null)
             {
                 cardImage.sprite = cardBackSprite;
+                Debug.Log("Displaying card back sprite: " + cardBackSprite.name);
+            }
+            else
+            {
+                Debug.LogWarning("No card back sprite available!");
             }
         }
     }

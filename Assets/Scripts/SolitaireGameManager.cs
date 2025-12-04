@@ -85,9 +85,11 @@ public class SolitaireGameManager : MonoBehaviour
                         continue;
                     }
                     
-                    // 设置卡牌位置 - 从顶部开始垂直叠放
+                    // 设置卡牌位置和尺寸
                     RectTransform cardRect = cardObj.GetComponent<RectTransform>();
-                    RectTransform columnRect = tableauColumns[col].GetComponent<RectTransform>();
+                    
+                    // 设置tableau中的卡牌尺寸为46*70
+                    cardRect.sizeDelta = new Vector2(46f, 70f);
                     
                     float cardHeight = 30f; // 卡牌间距
                     
@@ -99,7 +101,9 @@ public class SolitaireGameManager : MonoBehaviour
                     // 从顶部开始向下排列
                     cardRect.anchoredPosition = new Vector2(0, -row * cardHeight);
                     
-                    cardDisplay.SetCard(card);
+                    // 加载卡背图片
+                    Sprite backSprite = Resources.Load<Sprite>("tree");
+                    cardDisplay.SetCard(card, backSprite);
                     
                     // 只有最后一张牌翻开
                     if (row == col)
@@ -110,6 +114,7 @@ public class SolitaireGameManager : MonoBehaviour
                     else
                     {
                         cardDisplay.HideCard();
+                        Debug.Log($"Hidden card in column {col}, row {row}");
                     }
                     
                     tableau[col].Add(cardDisplay);
@@ -138,7 +143,9 @@ public class SolitaireGameManager : MonoBehaviour
                     RectTransform stockCardRect = cardObj.GetComponent<RectTransform>();
                     stockCardRect.anchoredPosition = Vector2.zero;
                     
-                    cardDisplay.SetCard(card);
+                    // 加载卡背图片
+                    Sprite backSprite = Resources.Load<Sprite>("tree");
+                    cardDisplay.SetCard(card, backSprite);
                     cardDisplay.HideCard();
                     stock.Add(cardDisplay);
                 }
@@ -199,8 +206,12 @@ public class SolitaireGameManager : MonoBehaviour
                 // 移动到对应列的顶部
                 card.transform.SetParent(tableauColumns[col], false);
                 
-                // 设置位置
+                // 设置位置和尺寸
                 RectTransform cardRect = card.GetComponent<RectTransform>();
+                
+                // 设置卡牌尺寸为46*70
+                cardRect.sizeDelta = new Vector2(46f, 70f);
+                
                 float cardHeight = 30f;
                 int cardCount = tableau[col].Count;
                 
@@ -251,8 +262,12 @@ public class SolitaireGameManager : MonoBehaviour
             // 计算正确的位置（基于当前列的总数）
             int currentRow = startPosition + i;
             
-            // 设置位置
+            // 设置位置和尺寸
             RectTransform cardRect = card.GetComponent<RectTransform>();
+            
+            // 设置卡牌尺寸为46*70
+            cardRect.sizeDelta = new Vector2(46f, 70f);
+            
             cardRect.anchorMin = new Vector2(0.5f, 1f);
             cardRect.anchorMax = new Vector2(0.5f, 1f);
             cardRect.pivot = new Vector2(0.5f, 1f);
@@ -292,8 +307,8 @@ public class SolitaireGameManager : MonoBehaviour
         
         if (column.Count == 0)
         {
-            Debug.Log($"Empty column - can place K: {card.rank == Card.Rank.King}");
-            return card.rank == Card.Rank.King;
+            Debug.Log($"Empty column - can place any card: {card.GetCardName()}");
+            return true; // 任何牌都可以放在空列
         }
         
         Card topCard = column[column.Count - 1].GetCard();
