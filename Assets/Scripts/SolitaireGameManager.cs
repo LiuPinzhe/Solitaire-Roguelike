@@ -291,7 +291,10 @@ public class SolitaireGameManager : MonoBehaviour
         List<CardDisplay> column = tableau[columnIndex];
         
         if (column.Count == 0)
+        {
+            Debug.Log($"Empty column - can place K: {card.rank == Card.Rank.King}");
             return card.rank == Card.Rank.King;
+        }
         
         Card topCard = column[column.Count - 1].GetCard();
         bool correctRank = (int)card.rank == (int)topCard.rank - 1;

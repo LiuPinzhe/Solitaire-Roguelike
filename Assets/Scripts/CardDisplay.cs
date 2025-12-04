@@ -77,6 +77,9 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
+        // 只有顶部连续序列可以拖拽
+        if (!CanDragFromPosition()) return;
+        
         startPosition = transform.position;
         startParent = transform.parent;
         
@@ -230,5 +233,24 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
         
         return sequence;
+    }
+    
+    bool CanDragFromPosition()
+    {
+        SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
+        for (int i = 0; i < 7; i++)
+        {
+            var col = gm.GetTableauColumn(i);
+            int idx = col.IndexOf(this);
+            if (idx >= 0)
+            {
+                // 检查从当前位置到末尾是否连续
+                for (int j = idx; j < col.Count - 1; j++)
+                    if ((int)col[j + 1].GetCard().rank != (int)col[j].GetCard().rank - 1)
+                        return false;
+                return true;
+            }
+        }
+        return false;
     }
 }
