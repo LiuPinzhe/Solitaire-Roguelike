@@ -185,26 +185,14 @@ public class SolitaireGameManager : MonoBehaviour
     
     public void DrawFromStock()
     {
-        Debug.Log($"DrawFromStock called. Stock has {stock.Count} cards");
-        
-        // 检查是否所有列都有牌
-        for (int i = 0; i < tableau.Count; i++)
-        {
-            if (tableau[i].Count == 0)
-            {
-                Debug.LogWarning($"Column {i} is empty! Cannot deal from stock.");
-                return;
-            }
-        }
-        
-        // 检查stock是否有足够的牌（至少10张）
-        if (stock.Count < 10)
+        // 检查stock是否有足够的牌（至少7张）
+        if (stock.Count < 7)
         {
             Debug.LogWarning($"Not enough cards in stock! Only {stock.Count} cards remaining.");
             return;
         }
         
-        // 给每列发一张牌
+        // 给每列发一张牌（包括空列）
         for (int col = 0; col < 7; col++)
         {
             if (stock.Count > 0)
@@ -232,12 +220,8 @@ public class SolitaireGameManager : MonoBehaviour
                 // 翻开卡牌并添加到列中
                 card.RevealCard();
                 tableau[col].Add(card);
-                
-                Debug.Log($"Dealt {card.GetCard().GetCardName()} to column {col}");
             }
         }
-        
-        Debug.Log($"Stock now has {stock.Count} cards remaining");
     }
     
     public void RemoveCardFromGame(CardDisplay cardDisplay)
