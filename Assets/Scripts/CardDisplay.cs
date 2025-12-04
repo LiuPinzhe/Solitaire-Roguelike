@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     [SerializeField] private Image cardImage;
     [SerializeField] private Card cardData;
@@ -78,9 +78,30 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
     
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!isRevealed) return;
+        
+        // 检查是否在Joker选择模式
+        SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
+        if (gm != null && gm.IsInCardSelectionMode())
+        {
+            Debug.Log($"[CardDisplay] Card clicked in selection mode: {GetCard().GetCardName()}");
+            gm.SelectCardForRemoval(this);
+            return;
+        }
+    }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!isRevealed) return;
+        
+        // 在Joker选择模式下不允许拖拽
+        SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
+        if (gm != null && gm.IsInCardSelectionMode())
+        {
+            return;
+        }
         
         // 只有顶部连续序列可以拖拽
         if (!CanDragFromPosition()) return;
@@ -116,6 +137,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
+        // 在Joker选择模式下不允许拖拽
+        SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
+        if (gm != null && gm.IsInCardSelectionMode())
+        {
+            return;
+        }
+        
         Vector3 worldPosition;
         RectTransformUtility.ScreenPointToWorldPointInRectangle(
             transform.parent.GetComponent<RectTransform>(),
@@ -134,6 +162,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!isRevealed) return;
+        
+        // 在Joker选择模式下不处理拖拽结束
+        SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
+        if (gm != null && gm.IsInCardSelectionMode())
+        {
+            return;
+        }
         
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;

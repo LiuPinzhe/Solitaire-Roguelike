@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,15 +15,20 @@ public class SolitaireGameManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject batPrefab;
+    [SerializeField] private GameObject jokerPrefab;
     
     [Header("Enemy System")]
     [SerializeField] private Transform enemySpawnPoint;
+    
+    [Header("Hand Area")]
+    [SerializeField] private Transform handArea;
     
     private Deck deck;
     private List<List<CardDisplay>> tableau = new List<List<CardDisplay>>();
     private List<List<CardDisplay>> foundations = new List<List<CardDisplay>>();
     private List<CardDisplay> stock = new List<CardDisplay>();
     private List<CardDisplay> waste = new List<CardDisplay>();
+    private bool cardSelectionMode = false;
     
     void Start()
     {
@@ -167,6 +173,9 @@ public class SolitaireGameManager : MonoBehaviour
         }
         
         Debug.Log("Game initialization complete");
+        
+        // 初始化HandArea
+        InitializeHandArea();
     }
     
     public int GetTableauCardCount(int columnIndex)
@@ -384,6 +393,105 @@ public class SolitaireGameManager : MonoBehaviour
         {
             GameObject newBat = Instantiate(batPrefab, enemySpawnPoint);
             newBat.SetActive(true);
+        }
+    }
+    
+    void InitializeHandArea()
+    {
+        if (handArea != null && jokerPrefab != null)
+        {
+            GameObject joker = Instantiate(jokerPrefab, handArea);
+            joker.SetActive(true);
+        }
+    }
+    
+    public void EnterCardSelectionMode()
+    {
+        Debug.Log($"[GameManager] EnterCardSelectionMode called");
+        cardSelectionMode = true;
+        Debug.Log($"[GameManager] Card selection mode activated");
+    }
+    
+    public void SelectCardForRemoval(CardDisplay cardDisplay)
+    {
+        Debug.Log($"[GameManager] SelectCardForRemoval called, cardSelectionMode: {cardSelectionMode}");
+        if (cardSelectionMode)
+        {
+            Debug.Log($"[GameManager] Removing card: {cardDisplay.GetCard().GetCardName()}");
+            // 移除选中的卡牌
+            RemoveCardFromCurrentLocation(cardDisplay);
+            Destroy(cardDisplay.gameObject);
+            
+            // 检查并翻开新的顶牌
+            CheckAndRevealTopCards();
+            
+            // 重置Joker状态
+            Joker joker = FindObjectOfType<Joker>();
+            if (joker != null)
+            {
+                joker.ResetJoker();
+            }
+            
+            // 退出选择模式
+            cardSelectionMode = false;
+            Debug.Log($"[GameManager] Card selection mode deactivated");
+        }
+    }
+    
+    public bool IsInCardSelectionMode()
+    {
+        return cardSelectionMode;
+    }
+    
+    void Update()
+    {
+        // 在选择模式下检测点击
+        if (cardSelectionMode && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            CheckForCancelClick();
+        }
+    }
+    
+    void CheckForCancelClick()
+    {
+        // 检查点击是否命中了卡牌
+        var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
+        var eventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
+        eventData.position = Mouse.current.position.ReadValue();
+        UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, raycastResults);
+        
+        bool hitCard = false;
+        foreach (var result in raycastResults)
+        {
+            if (result.gameObject.GetComponent<CardDisplay>() != null)
+            {
+                hitCard = true;
+                break;
+            }
+        }
+        
+        // 如果没有点击到卡牌，则取消选择
+        if (!hitCard)
+        {
+            CancelCardSelection();
+        }
+    }
+    
+    public void CancelCardSelection()
+    {
+        Debug.Log($"[GameManager] CancelCardSelection called");
+        if (cardSelectionMode)
+        {
+            // 重置Joker状态
+            Joker joker = FindObjectOfType<Joker>();
+            if (joker != null)
+            {
+                joker.ResetJoker();
+            }
+            
+            // 退出选择模式
+            cardSelectionMode = false;
+            Debug.Log($"[GameManager] Card selection mode canceled");
         }
     }
 }
