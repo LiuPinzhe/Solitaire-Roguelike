@@ -1,0 +1,1469 @@
+fileFormatVersion: 2
+guid: 8cef1e1bc52c5f446bdd3cd3d30a8a20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6410253859429170700
+    second: ForestCards_0
+  - first:
+      213: -5739938320652652335
+    second: ForestCards_1
+  - first:
+      213: -5786621990001236638
+    second: ForestCards_2
+  - first:
+      213: -9114209938239951749
+    second: ForestCards_3
+  - first:
+      213: 9114020059282457243
+    second: ForestCards_4
+  - first:
+      213: -2300806332187240254
+    second: ForestCards_5
+  - first:
+      213: 1023078421245861850
+    second: ForestCards_6
+  - first:
+      213: 794840535712223320
+    second: ForestCards_7
+  - first:
+      213: -4091284754989066371
+    second: ForestCards_8
+  - first:
+      213: -7595698618184147095
+    second: ForestCards_9
+  - first:
+      213: -8302032155483672879
+    second: ForestCards_10
+  - first:
+      213: -4951316129942041214
+    second: ForestCards_11
+  - first:
+      213: 3545181089201923309
+    second: ForestCards_12
+  - first:
+      213: 4819254377386443456
+    second: ForestCards_13
+  - first:
+      213: 2260920698336408645
+    second: ForestCards_14
+  - first:
+      213: 7413856234982171200
+    second: ForestCards_15
+  - first:
+      213: -4718584316196045597
+    second: ForestCards_16
+  - first:
+      213: 7073743053463575240
+    second: ForestCards_17
+  - first:
+      213: -5083510530449389472
+    second: ForestCards_18
+  - first:
+      213: 1104461565266298506
+    second: ForestCards_19
+  - first:
+      213: 9022062877349630874
+    second: ForestCards_20
+  - first:
+      213: -2676605312946893303
+    second: ForestCards_21
+  - first:
+      213: -3594703129690732234
+    second: ForestCards_22
+  - first:
+      213: -598595328562459646
+    second: ForestCards_23
+  - first:
+      213: 1119628658801655491
+    second: ForestCards_24
+  - first:
+      213: 8418762547261665228
+    second: ForestCards_25
+  - first:
+      213: 9137705487054718308
+    second: ForestCards_26
+  - first:
+      213: -683225095211864541
+    second: ForestCards_27
+  - first:
+      213: 1465706039270686314
+    second: ForestCards_28
+  - first:
+      213: 3259070403162858861
+    second: ForestCards_29
+  - first:
+      213: 6310024372211730430
+    second: ForestCards_30
+  - first:
+      213: -1337762654513496946
+    second: ForestCards_31
+  - first:
+      213: 2512808871845656764
+    second: ForestCards_32
+  - first:
+      213: -6542574578025054606
+    second: ForestCards_33
+  - first:
+      213: -3333120600051047367
+    second: ForestCards_34
+  - first:
+      213: 13339990114248731
+    second: ForestCards_35
+  - first:
+      213: -2413254534612040579
+    second: ForestCards_36
+  - first:
+      213: 5307674004352281123
+    second: ForestCards_37
+  - first:
+      213: 5659881435430700693
+    second: ForestCards_38
+  - first:
+      213: 1047547713647305513
+    second: ForestCards_39
+  - first:
+      213: -4540692514138745668
+    second: ForestCards_40
+  - first:
+      213: 3439594425459749366
+    second: ForestCards_41
+  - first:
+      213: 1629204071101238350
+    second: ForestCards_42
+  - first:
+      213: -3941559285751433686
+    second: ForestCards_43
+  - first:
+      213: -2499565136633304721
+    second: ForestCards_44
+  - first:
+      213: -5888106765784463383
+    second: ForestCards_45
+  - first:
+      213: 7295638339500053597
+    second: ForestCards_46
+  - first:
+      213: -437638644667769703
+    second: ForestCards_47
+  - first:
+      213: -4357980554049580130
+    second: ForestCards_48
+  - first:
+      213: -9131935092712660252
+    second: ForestCards_49
+  - first:
+      213: 2418179139777377542
+    second: ForestCards_50
+  - first:
+      213: 6993085531228918069
+    second: ForestCards_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ForestCards_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 107
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1c5ace3143a07a0800000000000000
+      internalID: -6410253859429170700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0b8d44284a750b0800000000000000
+      internalID: -5739938320652652335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265238c75f9c1bfa0800000000000000
+      internalID: -5786621990001236638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c6fdea952d38180800000000000000
+      internalID: -9114209938239951749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92c05da4f08b7e70800000000000000
+      internalID: 9114020059282457243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c89201c4d4e110e0800000000000000
+      internalID: -2300806332187240254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf1ab35764b23e00800000000000000
+      internalID: 1023078421245861850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85055388147d70b00800000000000000
+      internalID: 794840535712223320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d77d7ef1136d837c0800000000000000
+      internalID: -4091284754989066371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f553ab958a69690800000000000000
+      internalID: -7595698618184147095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_10
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de668a9db149cc80800000000000000
+      internalID: -8302032155483672879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d84288634694bb0800000000000000
+      internalID: -4951316129942041214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4205eda63033130800000000000000
+      internalID: 3545181089201923309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c28d5e925e61e240800000000000000
+      internalID: 4819254377386443456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_14
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5447ba17567606f10800000000000000
+      internalID: 2260920698336408645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_15
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0426de527fe43e660800000000000000
+      internalID: 7413856234982171200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_16
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ecb7668098348eb0800000000000000
+      internalID: -4718584316196045597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_17
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca551e24dbfa2260800000000000000
+      internalID: 7073743053463575240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_18
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0684b9c2b1eb379b0800000000000000
+      internalID: -5083510530449389472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_19
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8605c121f5d35f00800000000000000
+      internalID: 1104461565266298506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_20
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93d9a1d26ec43d70800000000000000
+      internalID: 9022062877349630874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_21
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e80ed26a9cadad0800000000000000
+      internalID: -2676605312946893303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_22
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6398cc19c8c0d1ec0800000000000000
+      internalID: -3594703129690732234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_23
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c83dc58bc51b7f0800000000000000
+      internalID: -598595328562459646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_24
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 107
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce38384558b98f00800000000000000
+      internalID: 1119628658801655491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_25
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 71
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfe4e5aee375d470800000000000000
+      internalID: 8418762547261665228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465c8021ab6afce70800000000000000
+      internalID: 9137705487054718308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ea3425562b486f0800000000000000
+      internalID: -683225095211864541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_28
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ebfd780eb375410800000000000000
+      internalID: 1465706039270686314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_29
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65e28ea34b8a3d20800000000000000
+      internalID: 3259070403162858861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_30
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7ccbd0cb5b19750800000000000000
+      internalID: 6310024372211730430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_31
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c70f714ff4f6de0800000000000000
+      internalID: -1337762654513496946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_32
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb87fc20b5a4fd220800000000000000
+      internalID: 2512808871845656764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_33
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27eb058d51b1435a0800000000000000
+      internalID: -6542574578025054606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_34
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934ab6059706eb1d0800000000000000
+      internalID: -3333120600051047367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_35
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18211c76a46f2000800000000000000
+      internalID: 13339990114248731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_36
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7449d769c5628ed0800000000000000
+      internalID: -2413254534612040579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_37
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a2efcb265a8a940800000000000000
+      internalID: 5307674004352281123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_38
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596ccad9d20fb8e40800000000000000
+      internalID: 5659881435430700693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_39
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923683d6813a98e00800000000000000
+      internalID: 1047547713647305513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_40
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb41c7c47383cf0c0800000000000000
+      internalID: -4540692514138745668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_41
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f131fcf7e4ebbf20800000000000000
+      internalID: 3439594425459749366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_42
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c0c9488781c9610800000000000000
+      internalID: 1629204071101238350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_43
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26b4af76b4cc49c0800000000000000
+      internalID: -3941559285751433686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_44
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69650260c2cf4dd0800000000000000
+      internalID: -2499565136633304721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_45
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7c7d1d71e394ea0800000000000000
+      internalID: -5888106765784463383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_46
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d541f937a605f3560800000000000000
+      internalID: 7295638339500053597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_47
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c189ca8f13de9f0800000000000000
+      internalID: -437638644667769703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_48
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9390d196c75583c0800000000000000
+      internalID: -4357980554049580130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_49
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e220fe8a69d44180800000000000000
+      internalID: -9131935092712660252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_50
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 35
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605b0b59d191f8120800000000000000
+      internalID: 2418179139777377542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestCards_51
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531d2dc5d3e6c0160800000000000000
+      internalID: 6993085531228918069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ForestCards_0: -6410253859429170700
+      ForestCards_1: -5739938320652652335
+      ForestCards_10: -8302032155483672879
+      ForestCards_11: -4951316129942041214
+      ForestCards_12: 3545181089201923309
+      ForestCards_13: 4819254377386443456
+      ForestCards_14: 2260920698336408645
+      ForestCards_15: 7413856234982171200
+      ForestCards_16: -4718584316196045597
+      ForestCards_17: 7073743053463575240
+      ForestCards_18: -5083510530449389472
+      ForestCards_19: 1104461565266298506
+      ForestCards_2: -5786621990001236638
+      ForestCards_20: 9022062877349630874
+      ForestCards_21: -2676605312946893303
+      ForestCards_22: -3594703129690732234
+      ForestCards_23: -598595328562459646
+      ForestCards_24: 1119628658801655491
+      ForestCards_25: 8418762547261665228
+      ForestCards_26: 9137705487054718308
+      ForestCards_27: -683225095211864541
+      ForestCards_28: 1465706039270686314
+      ForestCards_29: 3259070403162858861
+      ForestCards_3: -9114209938239951749
+      ForestCards_30: 6310024372211730430
+      ForestCards_31: -1337762654513496946
+      ForestCards_32: 2512808871845656764
+      ForestCards_33: -6542574578025054606
+      ForestCards_34: -3333120600051047367
+      ForestCards_35: 13339990114248731
+      ForestCards_36: -2413254534612040579
+      ForestCards_37: 5307674004352281123
+      ForestCards_38: 5659881435430700693
+      ForestCards_39: 1047547713647305513
+      ForestCards_4: 9114020059282457243
+      ForestCards_40: -4540692514138745668
+      ForestCards_41: 3439594425459749366
+      ForestCards_42: 1629204071101238350
+      ForestCards_43: -3941559285751433686
+      ForestCards_44: -2499565136633304721
+      ForestCards_45: -5888106765784463383
+      ForestCards_46: 7295638339500053597
+      ForestCards_47: -437638644667769703
+      ForestCards_48: -4357980554049580130
+      ForestCards_49: -9131935092712660252
+      ForestCards_5: -2300806332187240254
+      ForestCards_50: 2418179139777377542
+      ForestCards_51: 6993085531228918069
+      ForestCards_6: 1023078421245861850
+      ForestCards_7: 794840535712223320
+      ForestCards_8: -4091284754989066371
+      ForestCards_9: -7595698618184147095
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

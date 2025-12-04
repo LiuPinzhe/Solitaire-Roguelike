@@ -1,0 +1,59 @@
+Unity卡牌游戏场景设置指南
+================================
+
+1. 场景UI设置：
+   - 创建Canvas (UI -> Canvas)
+   - 在Canvas下创建以下UI元素：
+
+2. 创建游戏管理器：
+   - 创建空GameObject，命名为"GameManager"
+   - 添加CardGameManager脚本
+   - 添加Deck脚本
+
+3. 创建UI元素：
+   a) 抽牌按钮：
+      - UI -> Button，命名为"DrawButton"
+      - 文本改为"抽牌"
+      
+   b) 信息显示：
+      - UI -> Text，命名为"DeckCountText"
+      - UI -> Text，命名为"HandCountText"
+      
+   c) 手牌区域：
+      - 创建空GameObject，命名为"HandArea"
+      - 添加Horizontal Layout Group组件
+      - 设置适当的spacing
+
+4. 创建卡牌预制体：
+   a) 创建UI -> Image，命名为"CardPrefab"
+   b) 添加CardDisplay脚本
+   c) 设置Image大小 (建议100x140)
+   d) 拖拽到Prefabs文件夹制作预制体
+
+5. 设置Sprite：
+   - 将ForestCards.png复制到Assets/Resources文件夹
+   - 选择ForestCards.png，设置Sprite Mode为Multiple
+   - 点击Sprite Editor进行切片，确保切出52张sprite
+   - 切片后的sprite会自动命名为ForestCards_0到ForestCards_51
+
+6. 连接组件：
+   - 在GameManager的CardGameManager脚本中：
+     * Deck -> 拖拽GameManager自身
+     * Hand Area -> 拖拽HandArea GameObject
+     * Card Prefab -> 拖拽卡牌预制体
+     * Draw Button -> 拖拽抽牌按钮
+     * Deck Count Text -> 拖拽牌组计数文本
+     * Hand Count Text -> 拖拽手牌计数文本
+   
+   - 在Deck脚本中：
+     * Card Back Sprite -> 拖拽卡牌背面sprite
+     * (卡牌sprite会自动加载，无需手动设置)
+
+7. 测试：
+   - 运行场景
+   - 点击抽牌按钮测试功能
+
+注意事项：
+- 确保所有sprite都正确设置
+- 检查UI元素的层级关系
+- 调整卡牌大小和间距以获得最佳视觉效果
