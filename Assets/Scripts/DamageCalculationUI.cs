@@ -85,7 +85,7 @@ public class DamageCalculationUI : MonoBehaviour
         // 逐步显示计算过程
         if (chainLengthText != null)
         {
-            chainLengthText.text = $"{chainLength} × 4 = {chainDamage}";
+            chainLengthText.text = $"{chainLength} × 4 +";
             chainLengthText.color = Color.cyan;
             Debug.Log($"Set chainLengthText: {chainLengthText.text}");
         }
@@ -93,7 +93,9 @@ public class DamageCalculationUI : MonoBehaviour
         
         if (headRankText != null)
         {
-            headRankText.text = $"({headRank} - 1) × 2 = {rankDamage}";
+            string headText = $"({headRank} - 1) × 2";
+            if (bonus > 0) headText += " +";
+            headRankText.text = headText;
             headRankText.color = Color.yellow;
             Debug.Log($"Set headRankText: {headRankText.text}");
         }
@@ -107,15 +109,10 @@ public class DamageCalculationUI : MonoBehaviour
             yield return new WaitForSeconds(0.8f);
         }
         
-        // 显示总伤害计算
+        // 显示总伤害
         if (totalDamageText != null)
         {
-            string calculation = $"{chainDamage}";
-            if (rankDamage > 0) calculation += $" + {rankDamage}";
-            if (bonus > 0) calculation += $" + {bonus}";
-            calculation += $" = {totalDamage}";
-            
-            totalDamageText.text = calculation;
+            totalDamageText.text = $"= {totalDamage}";
             totalDamageText.color = Color.green;
             totalDamageText.transform.localScale = Vector3.zero;
             totalDamageText.transform.DOScale(1.2f, 0.3f).SetEase(Ease.OutBack);
@@ -138,7 +135,26 @@ public class DamageCalculationUI : MonoBehaviour
         // 清理之前的卡牌
         ClearDisplayedCards();
         
-        for (int i = 0; i < sequence.Count; i++)
+        int cardCount = sequence.Count;
+        float containerWidth = cardDisplayContainer.GetComponent<RectTransform>().rect.width;
+        
+        // 根据卡牌数量调整间距
+        float cardWidth = 80f;
+        float maxSpacing = 35f;
+        float minSpacing = 35f;
+        
+        // 计算每行卡牌数和间距
+        int cardsPerRow = Mathf.Min(6, cardCount);
+        float totalWidth = cardsPerRow * cardWidth + (cardsPerRow - 1) * maxSpacing;
+        
+        // 如果超出容器宽度，减少间距
+        float spacing = maxSpacing;
+        if (totalWidth > containerWidth)
+        {
+            spacing = Mathf.Max(minSpacing, (containerWidth - cardsPerRow * cardWidth) / (cardsPerRow - 1));
+        }
+        
+        for (int i = 0; i < cardCount; i++)
         {
             GameObject cardObj = Instantiate(cardPrefab, cardDisplayContainer);
             CardDisplay cardDisplay = cardObj.GetComponent<CardDisplay>();
@@ -149,12 +165,14 @@ public class DamageCalculationUI : MonoBehaviour
                 cardDisplay.RevealCard();
                 
                 RectTransform cardRect = cardObj.GetComponent<RectTransform>();
-                cardRect.sizeDelta = new Vector2(80f, 120f);
+                cardRect.sizeDelta = new Vector2(cardWidth, 120f);
                 
                 // 计算位置
-                int row = i / 6;
-                int col = i % 6;
-                Vector2 targetPos = new Vector2(col * 85f, -row * 130f);
+                int row = i / cardsPerRow;
+                int col = i % cardsPerRow;
+                
+                float startX = -(cardsPerRow - 1) * spacing / 2f;
+                Vector2 targetPos = new Vector2(startX + col * (cardWidth + spacing), -row * 130f);
                 
                 // 直接设置位置
                 cardRect.anchoredPosition = targetPos;
