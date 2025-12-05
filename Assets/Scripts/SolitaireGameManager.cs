@@ -315,14 +315,14 @@ public class SolitaireGameManager : MonoBehaviour
         {
             CardDisplay card = sequence[i];
             
-            // 添加到列数据先，再设置位置
-            tableau[targetColumnIndex].Add(card);
-            
             // 设置父对象
             card.transform.SetParent(tableauColumns[targetColumnIndex], false);
             
-            // 计算正确的位置（基于当前列的总数）
-            int currentRow = startPosition + i;
+            // 添加到列数据
+            tableau[targetColumnIndex].Add(card);
+            
+            // 计算正确的位置（基于添加后的列总数）
+            int currentRow = tableau[targetColumnIndex].Count - 1;
             
             // 设置位置和尺寸
             RectTransform cardRect = card.GetComponent<RectTransform>();
@@ -376,7 +376,7 @@ public class SolitaireGameManager : MonoBehaviour
         Card topCard = column[column.Count - 1].GetCard();
         bool normalRule = (int)card.rank == (int)topCard.rank - 1; // 正常规则：小1
         
-        // 森林卡牌特殊规则：可以接在比它小1的卡牌下面
+        // 森林卡牌特殊规则：只有森林卡牌可以接在比它小1的卡牌下面
         bool forestRule = card.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1;
         
         bool canPlace = normalRule || forestRule;

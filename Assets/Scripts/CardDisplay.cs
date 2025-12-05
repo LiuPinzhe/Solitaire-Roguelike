@@ -279,7 +279,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                     else
                     {
                         CardDisplay prevCard = sequence[sequence.Count - 1];
-                        if ((int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 1)
+                        bool normalSequence = (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 1;
+                        bool forestSequence = (prevCard.GetCard().set == "Forest/Backsides/Classic" && 
+                                              (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1) ||
+                                             (currentCard.GetCard().set == "Forest/Backsides/Classic" && 
+                                              (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1);
+                        
+                        if (normalSequence || forestSequence)
                         {
                             sequence.Add(currentCard);
                         }
@@ -307,8 +313,15 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             {
                 // 检查从当前位置到末尾是否连续
                 for (int j = idx; j < col.Count - 1; j++)
-                    if ((int)col[j + 1].GetCard().rank != (int)col[j].GetCard().rank - 1)
+                {
+                    bool normalSequence = (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank - 1;
+                    bool forestSequence = (col[j].GetCard().set == "Forest/Backsides/Classic" && 
+                                          (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1) ||
+                                         (col[j + 1].GetCard().set == "Forest/Backsides/Classic" && 
+                                          (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1);
+                    if (!normalSequence && !forestSequence)
                         return false;
+                }
                 return true;
             }
         }
