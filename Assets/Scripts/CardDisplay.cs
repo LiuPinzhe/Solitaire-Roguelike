@@ -295,7 +295,10 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                                                  (currentCard.GetCard().set == "Forest/Backsides/Classic" && 
                                                   (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1);
                             
-                            if (normalSequence || forestSequence)
+                            bool fireSequence = currentCard.GetCard().set == "Fire/Backsides/Classic" && 
+                                               (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank;
+                            
+                            if (normalSequence || forestSequence || fireSequence)
                             {
                                 sequence.Add(currentCard);
                             }
@@ -334,7 +337,11 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                                           (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1) ||
                                          (col[j + 1].GetCard().set == "Forest/Backsides/Classic" && 
                                           (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1);
-                    if (!normalSequence && !forestSequence)
+                    
+                    bool fireSequence = col[j + 1].GetCard().set == "Fire/Backsides/Classic" && 
+                                       (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank;
+                    
+                    if (!normalSequence && !forestSequence && !fireSequence)
                         return false;
                 }
                 return true;

@@ -119,7 +119,13 @@ public class SolitaireGameManager : MonoBehaviour
                     cardRect.anchoredPosition = new Vector2(0, -row * cardHeight);
                     
                     // 根据卡牌set选择卡背图片
-                    string backSpritePath = card.set == "Forest/Backsides/Classic" ? "Forest/Backsides/Classic" : "Classic/Backsides/LightClassic";
+                    string backSpritePath = "Classic/Backsides/LightClassic";
+                    if (card.set == "Forest/Backsides/Classic")
+                        backSpritePath = "Forest/Backsides/Classic";
+                    else if (card.set == "Space/Backsides/Classic")
+                        backSpritePath = "Space/Backsides/Classic";
+                    else if (card.set == "Fire/Backsides/Classic")
+                        backSpritePath = "Fire/Backsides/Classic";
                     Sprite backSprite = Resources.Load<Sprite>(backSpritePath);
                     cardDisplay.SetCard(card, backSprite);
                     
@@ -166,7 +172,13 @@ public class SolitaireGameManager : MonoBehaviour
                     stockCardRect.anchoredPosition = Vector2.zero;
                     
                     // 根据卡牌set选择卡背图片
-                    string backSpritePath = card.set == "Forest/Backsides/Classic" ? "Forest/Backsides/Classic" : "Classic/Backsides/LightClassic";
+                    string backSpritePath = "Classic/Backsides/LightClassic";
+                    if (card.set == "Forest/Backsides/Classic")
+                        backSpritePath = "Forest/Backsides/Classic";
+                    else if (card.set == "Space/Backsides/Classic")
+                        backSpritePath = "Space/Backsides/Classic";
+                    else if (card.set == "Fire/Backsides/Classic")
+                        backSpritePath = "Fire/Backsides/Classic";
                     Sprite backSprite = Resources.Load<Sprite>(backSpritePath);
                     cardDisplay.SetCard(card, backSprite);
                     cardDisplay.HideCard();
@@ -379,7 +391,10 @@ public class SolitaireGameManager : MonoBehaviour
         // 森林卡牌特殊规则：只有森林卡牌可以接在比它小1的卡牌下面
         bool forestRule = card.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1;
         
-        bool canPlace = normalRule || forestRule;
+        // 火焰卡牌特殊规则：可以接在和它数字一样的卡牌后面
+        bool fireRule = card.set == "Fire/Backsides/Classic" && (int)card.rank == (int)topCard.rank;
+        
+        bool canPlace = normalRule || forestRule || fireRule;
         
         Debug.Log($"Trying to move {card.GetCardName()} to {topCard.GetCardName()}: normalRule={normalRule}, forestRule={forestRule}, canPlace={canPlace}");
         
