@@ -20,6 +20,7 @@ public class Deck : MonoBehaviour
         Debug.Log("Initializing deck...");
         
         LoadClassicCards();
+        LoadForestCards();
         
         Debug.Log("Deck initialized with " + cards.Count + " cards");
     }
@@ -103,7 +104,7 @@ public class Deck : MonoBehaviour
                 suit = ((spriteIndex - 26) % 2 == 0) ? 2 : 1; // 2=草花, 1=方片
             }
             
-            Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Forest");
+            Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Forest/Backsides/Classic");
             cards.Add(newCard);
         }
     }

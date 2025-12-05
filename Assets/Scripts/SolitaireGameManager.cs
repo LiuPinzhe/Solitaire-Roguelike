@@ -118,8 +118,9 @@ public class SolitaireGameManager : MonoBehaviour
                     // 从顶部开始向下排列
                     cardRect.anchoredPosition = new Vector2(0, -row * cardHeight);
                     
-                    // 加载卡背图片
-                    Sprite backSprite = Resources.Load<Sprite>("Classic/Backsides/LightClassic");
+                    // 根据卡牌set选择卡背图片
+                    string backSpritePath = card.set == "Forest/Backsides/Classic" ? "Forest/Backsides/Classic" : "Classic/Backsides/LightClassic";
+                    Sprite backSprite = Resources.Load<Sprite>(backSpritePath);
                     cardDisplay.SetCard(card, backSprite);
                     
                     // 只有最后一张牌翻开
@@ -164,8 +165,9 @@ public class SolitaireGameManager : MonoBehaviour
                     
                     stockCardRect.anchoredPosition = Vector2.zero;
                     
-                    // 加载卡背图片
-                    Sprite backSprite = Resources.Load<Sprite>("Classic/Backsides/LightClassic");
+                    // 根据卡牌set选择卡背图片
+                    string backSpritePath = card.set == "Forest/Backsides/Classic" ? "Forest/Backsides/Classic" : "Classic/Backsides/LightClassic";
+                    Sprite backSprite = Resources.Load<Sprite>(backSpritePath);
                     cardDisplay.SetCard(card, backSprite);
                     cardDisplay.HideCard();
                     
