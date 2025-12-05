@@ -518,13 +518,10 @@ public class SolitaireGameManager : MonoBehaviour
     
     public void StartNextLevel()
     {
-        // Clear cards but don't reinitialize deck (keep reward cards)
-        ClearAllCards();
-        
         // Reset deck with all cards (including rewards) then shuffle
         deck.ResetDeckForNewGame();
         deck.ShuffleDeck();
-        InitializeGame();
+        ResetGame();
         SpawnNextEnemy();
     }
     
