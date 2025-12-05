@@ -499,6 +499,22 @@ public class SolitaireGameManager : MonoBehaviour
         }
     }
     
+    public void ShowRewardCanvas()
+    {
+        RewardManager rewardManager = FindFirstObjectByType<RewardManager>();
+        if (rewardManager != null)
+        {
+            rewardManager.ShowRewards();
+        }
+    }
+    
+    public void StartNextLevel()
+    {
+        ClearAllCards();
+        deck.ShuffleDeck();
+        InitializeGame();
+    }
+    
     void InitializeHandArea()
     {
         if (handArea != null)

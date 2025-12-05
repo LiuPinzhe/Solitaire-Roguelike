@@ -53,10 +53,10 @@ public class Enemy : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
+        Debug.Log($"Enemy taking {damage} damage. Health: {currentHealth}/{maxHealth}");
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
-        
-
+        Debug.Log($"Enemy health after damage: {currentHealth}/{maxHealth}");
         
         // 显示伤害数字
         ShowDamageText(damage);
@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
         // 检查是否死亡
         if (currentHealth <= 0)
         {
+            Debug.Log("Enemy health <= 0, calling Die()");
             Die();
         }
     }
@@ -138,9 +139,23 @@ public class Enemy : MonoBehaviour
     
     protected virtual void Die()
     {
+        Debug.Log("Enemy Die() called");
         if (currentAnimation != null)
         {
             StopCoroutine(currentAnimation);
+        }
+        
+        // 显示奖励界面
+        Debug.Log("Enemy died, looking for RewardManager...");
+        RewardManager rewardManager = FindObjectOfType<RewardManager>();
+        if (rewardManager != null)
+        {
+            Debug.Log("RewardManager found, showing rewards");
+            rewardManager.ShowRewards();
+        }
+        else
+        {
+            Debug.LogError("RewardManager not found!");
         }
         
         StartCoroutine(DeathSequence());
@@ -148,9 +163,12 @@ public class Enemy : MonoBehaviour
     
     protected virtual IEnumerator DeathSequence()
     {
+        Debug.Log("DeathSequence started");
+        
         // 基础死亡效果：渐隐
         if (enemyImage != null)
         {
+            Debug.Log("Starting fade animation");
             float alpha = 1f;
             while (alpha > 0)
             {
@@ -160,15 +178,10 @@ public class Enemy : MonoBehaviour
                 enemyImage.color = color;
                 yield return null;
             }
+            Debug.Log("Fade animation complete");
         }
         
-        // 通知GameManager生成下一个敌人
-        SolitaireGameManager gameManager = FindObjectOfType<SolitaireGameManager>();
-        if (gameManager != null)
-        {
-            gameManager.SpawnNextEnemy();
-        }
-        
+        Debug.Log("Deactivating enemy GameObject");
         gameObject.SetActive(false);
     }
     

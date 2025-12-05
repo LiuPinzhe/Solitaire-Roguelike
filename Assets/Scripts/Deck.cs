@@ -236,5 +236,8 @@ public class Deck : MonoBehaviour
         return cards.Count;
     }
     
-
+    public void AddCard(Card card)
+    {
+        cards.Add(card);
+    }
 }
