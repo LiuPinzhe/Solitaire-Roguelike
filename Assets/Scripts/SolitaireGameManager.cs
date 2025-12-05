@@ -26,6 +26,9 @@ public class SolitaireGameManager : MonoBehaviour
     [Header("Hand Area")]
     [SerializeField] private Transform handArea;
     
+    [Header("UI")]
+    [SerializeField] private UnityEngine.UI.Button resetButton;
+    
     private Deck deck;
     private List<List<CardDisplay>> tableau = new List<List<CardDisplay>>();
     private List<List<CardDisplay>> foundations = new List<List<CardDisplay>>();
@@ -204,6 +207,12 @@ public class SolitaireGameManager : MonoBehaviour
         
         // 初始化HandArea
         InitializeHandArea();
+        
+        // 设置重置按钮
+        if (resetButton != null)
+        {
+            resetButton.onClick.AddListener(ResetGame);
+        }
     }
     
     public int GetTableauCardCount(int columnIndex)
@@ -705,5 +714,70 @@ public class SolitaireGameManager : MonoBehaviour
             
             cardSwapMode = false;
         }
+    }
+    
+    public void ResetGame()
+    {
+        // 清理现有卡牌
+        ClearAllCards();
+        
+        // 重置游戏状态
+        cardSelectionMode = false;
+        cardSwapMode = false;
+        firstSelectedCard = null;
+        isDealing = false;
+        
+        // 重新初始化牌组和游戏
+        deck.InitializeDeck();
+        deck.ShuffleDeck();
+        InitializeGame();
+    }
+    
+    void ClearAllCards()
+    {
+        // 清理tableau
+        for (int i = 0; i < tableauColumns.Length; i++)
+        {
+            foreach (Transform child in tableauColumns[i])
+            {
+                if (child.GetComponent<CardDisplay>() != null)
+                    Destroy(child.gameObject);
+            }
+        }
+        
+        // 清理foundation
+        for (int i = 0; i < foundationPiles.Length; i++)
+        {
+            foreach (Transform child in foundationPiles[i])
+            {
+                if (child.GetComponent<CardDisplay>() != null)
+                    Destroy(child.gameObject);
+            }
+        }
+        
+        // 清理stock
+        if (stockPile != null)
+        {
+            foreach (Transform child in stockPile)
+            {
+                if (child.GetComponent<CardDisplay>() != null)
+                    Destroy(child.gameObject);
+            }
+        }
+        
+        // 清理handArea中的Joker
+        if (handArea != null)
+        {
+            foreach (Transform child in handArea)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        
+        // 清理数据结构
+        tableau.Clear();
+        foundations.Clear();
+        stock.Clear();
+        waste.Clear();
     }
 }

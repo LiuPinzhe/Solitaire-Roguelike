@@ -38,16 +38,17 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
     
     int CalculateDamage(List<CardDisplay> sequence)
     {
-        int baseDamage = sequence.Count * 5; // 每张卡5点基础伤害
+        int chainLength = sequence.Count;
+        int headRank = (int)sequence[0].GetCard().rank;
         
-        // 根据卡牌点数增加伤害
-        int bonusDamage = 0;
-        foreach (CardDisplay card in sequence)
+        int damage = chainLength * 4 + (headRank - 1) * 2;
+        
+        if (chainLength >= 6)
         {
-            bonusDamage += (int)card.GetCard().rank;
+            damage += chainLength * chainLength;
         }
         
-        return baseDamage + bonusDamage;
+        return damage;
     }
     
     void RemoveCardSequence(List<CardDisplay> sequence)

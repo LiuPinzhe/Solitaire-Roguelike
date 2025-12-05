@@ -14,7 +14,7 @@ public class Deck : MonoBehaviour
         Debug.Log($"Deck initialized with {cards.Count} cards");
     }
     
-    void InitializeDeck()
+    public void InitializeDeck()
     {
         cards.Clear();
         Debug.Log("Initializing deck...");
