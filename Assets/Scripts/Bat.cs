@@ -118,7 +118,12 @@ public class Bat : Enemy
     {
         if (hitSprites != null && hitSprites.Length > 0)
         {
-            StartCoroutine(PlayHitAnimation());
+            // 停止当前动画再播放受击动画
+            if (currentAnimation != null)
+            {
+                StopCoroutine(currentAnimation);
+            }
+            currentAnimation = StartCoroutine(PlayHitAnimation());
         }
         else
         {
@@ -128,20 +133,20 @@ public class Bat : Enemy
     
     IEnumerator PlayHitAnimation()
     {
-        // 停止飞行动画
-        if (currentAnimation != null)
-        {
-            StopCoroutine(currentAnimation);
-        }
-        
         // 播放受伤动画
         for (int i = 0; i < hitSprites.Length; i++)
         {
-            enemyImage.sprite = hitSprites[i];
+            if (enemyImage != null)
+            {
+                enemyImage.sprite = hitSprites[i];
+            }
             yield return new WaitForSeconds(0.05f);
         }
         
         // 恢复飞行动画
-        currentAnimation = StartCoroutine(PlayFlyAnimation());
+        if (this != null && gameObject != null)
+        {
+            currentAnimation = StartCoroutine(PlayFlyAnimation());
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class EnemyDropZone : MonoBehaviour, IDropHandler
 {
     private Enemy enemy;
+    private bool isProcessingAttack = false;
     
     void Start()
     {
@@ -18,13 +19,16 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         CardDisplay draggedCard = eventData.pointerDrag?.GetComponent<CardDisplay>();
-        if (draggedCard != null && enemy != null && enemy.IsAlive())
+        if (draggedCard != null && enemy != null && enemy.IsAlive() && !isProcessingAttack)
         {
             // 获取拖拽的卡牌序列
             List<CardDisplay> sequence = draggedCard.GetDraggedSequence();
             
             // 计算伤害（基于卡牌链长度和点数）
             int damage = CalculateDamage(sequence);
+            
+            // 设置攻击状态
+            isProcessingAttack = true;
             
             // 显示伤害计算动画
             DamageCalculationUI.ShowDamageCalculation(sequence, damage);
@@ -46,6 +50,9 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
         {
             enemy.TakeDamage(damage);
         }
+        
+        // 重置攻击状态
+        isProcessingAttack = false;
     }
     
     int CalculateDamage(List<CardDisplay> sequence)
