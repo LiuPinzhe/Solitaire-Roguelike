@@ -53,12 +53,7 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
         int chainLength = sequence.Count;
         int headRank = (int)sequence[0].GetCard().rank;
         
-        int damage = chainLength * 4 + (headRank - 1) * 2;
-        
-        if (chainLength >= 6)
-        {
-            damage += chainLength * chainLength;
-        }
+        int damage = headRank * chainLength;
         
         return damage;
     }

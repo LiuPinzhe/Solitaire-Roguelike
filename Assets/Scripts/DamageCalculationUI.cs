@@ -37,10 +37,7 @@ public class DamageCalculationUI : MonoBehaviour
             // 临时调试输出
             int chainLength = sequence.Count;
             int headRank = (int)sequence[0].GetCard().rank;
-            int chainDamage = chainLength * 4;
-            int rankDamage = (headRank - 1) * 2;
-            int bonus = chainLength >= 6 ? chainLength * chainLength : 0;
-            Debug.Log($"伤害计算: 链长度({chainLength}×4={chainDamage}) + 首牌点数(({headRank}-1)×2={rankDamage}) + 奖励({bonus}) = 总伤害({totalDamage})");
+            Debug.Log($"伤害计算: {headRank} × {chainLength} = {totalDamage}");
         }
     }
     
@@ -61,11 +58,8 @@ public class DamageCalculationUI : MonoBehaviour
         
         int chainLength = sequence.Count;
         int headRank = (int)sequence[0].GetCard().rank;
-        int chainDamage = chainLength * 4;
-        int rankDamage = (headRank - 1) * 2;
-        int bonus = chainLength >= 6 ? chainLength * chainLength : 0;
         
-        Debug.Log($"Calculated: chainDamage={chainDamage}, rankDamage={rankDamage}, bonus={bonus}, total={totalDamage}");
+        Debug.Log($"Calculated: headRank={headRank}, chainLength={chainLength}, total={totalDamage}");
         
         // 重置所有文本
         if (chainLengthText != null) chainLengthText.text = "";
@@ -82,32 +76,14 @@ public class DamageCalculationUI : MonoBehaviour
         canvasGroup.DOFade(1f, 0.3f);
         yield return new WaitForSeconds(0.5f);
         
-        // 逐步显示计算过程
+        // 显示计算公式
         if (chainLengthText != null)
         {
-            chainLengthText.text = $"{chainLength} × 4 +";
+            chainLengthText.text = $"{headRank} × {chainLength}";
             chainLengthText.color = Color.cyan;
             Debug.Log($"Set chainLengthText: {chainLengthText.text}");
         }
         yield return new WaitForSeconds(0.8f);
-        
-        if (headRankText != null)
-        {
-            string headText = $"({headRank} - 1) × 2";
-            if (bonus > 0) headText += " +";
-            headRankText.text = headText;
-            headRankText.color = Color.yellow;
-            Debug.Log($"Set headRankText: {headRankText.text}");
-        }
-        yield return new WaitForSeconds(0.8f);
-        
-        if (bonus > 0 && bonusText != null)
-        {
-            bonusText.text = $"{chainLength} × {chainLength} = {bonus}";
-            bonusText.color = Color.magenta;
-            Debug.Log($"Set bonusText: {bonusText.text}");
-            yield return new WaitForSeconds(0.8f);
-        }
         
         // 显示总伤害
         if (totalDamageText != null)
