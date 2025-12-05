@@ -12,7 +12,8 @@ public class DamageCalculationUI : MonoBehaviour
     [SerializeField] private Text headRankText;
     [SerializeField] private Text bonusText;
     [SerializeField] private Text totalDamageText;
-    [SerializeField] private Transform calculationContainer;
+    [SerializeField] private Transform cardDisplayContainer;
+    [SerializeField] private GameObject cardPrefab;
     
     private static DamageCalculationUI instance;
     
@@ -55,6 +56,9 @@ public class DamageCalculationUI : MonoBehaviour
         
         calculationPanel.SetActive(true);
         
+        // 显示打出的卡牌
+        DisplayCards(sequence);
+        
         int chainLength = sequence.Count;
         int headRank = (int)sequence[0].GetCard().rank;
         int chainDamage = chainLength * 4;
@@ -82,6 +86,7 @@ public class DamageCalculationUI : MonoBehaviour
         if (chainLengthText != null)
         {
             chainLengthText.text = $"{chainLength} × 4 = {chainDamage}";
+            chainLengthText.color = Color.cyan;
             Debug.Log($"Set chainLengthText: {chainLengthText.text}");
         }
         yield return new WaitForSeconds(0.8f);
@@ -89,6 +94,7 @@ public class DamageCalculationUI : MonoBehaviour
         if (headRankText != null)
         {
             headRankText.text = $"({headRank} - 1) × 2 = {rankDamage}";
+            headRankText.color = Color.yellow;
             Debug.Log($"Set headRankText: {headRankText.text}");
         }
         yield return new WaitForSeconds(0.8f);
@@ -96,14 +102,21 @@ public class DamageCalculationUI : MonoBehaviour
         if (bonus > 0 && bonusText != null)
         {
             bonusText.text = $"{chainLength} × {chainLength} = {bonus}";
+            bonusText.color = Color.magenta;
             Debug.Log($"Set bonusText: {bonusText.text}");
             yield return new WaitForSeconds(0.8f);
         }
         
-        // 显示总伤害
+        // 显示总伤害计算
         if (totalDamageText != null)
         {
-            totalDamageText.text = $"{totalDamage}";
+            string calculation = $"{chainDamage}";
+            if (rankDamage > 0) calculation += $" + {rankDamage}";
+            if (bonus > 0) calculation += $" + {bonus}";
+            calculation += $" = {totalDamage}";
+            
+            totalDamageText.text = calculation;
+            totalDamageText.color = Color.green;
             totalDamageText.transform.localScale = Vector3.zero;
             totalDamageText.transform.DOScale(1.2f, 0.3f).SetEase(Ease.OutBack);
             Debug.Log($"Set totalDamageText: {totalDamageText.text}");
@@ -113,7 +126,49 @@ public class DamageCalculationUI : MonoBehaviour
         // 淡出面板
         canvasGroup.DOFade(0f, 0.3f).OnComplete(() => {
             calculationPanel.SetActive(false);
+            ClearDisplayedCards();
             Debug.Log("Animation completed");
         });
+    }
+    
+    void DisplayCards(List<CardDisplay> sequence)
+    {
+        if (cardDisplayContainer == null || cardPrefab == null) return;
+        
+        // 清理之前的卡牌
+        ClearDisplayedCards();
+        
+        for (int i = 0; i < sequence.Count; i++)
+        {
+            GameObject cardObj = Instantiate(cardPrefab, cardDisplayContainer);
+            CardDisplay cardDisplay = cardObj.GetComponent<CardDisplay>();
+            
+            if (cardDisplay != null)
+            {
+                cardDisplay.SetCard(sequence[i].GetCard());
+                cardDisplay.RevealCard();
+                
+                RectTransform cardRect = cardObj.GetComponent<RectTransform>();
+                cardRect.sizeDelta = new Vector2(80f, 120f);
+                
+                // 计算位置
+                int row = i / 6;
+                int col = i % 6;
+                Vector2 targetPos = new Vector2(col * 85f, -row * 130f);
+                
+                // 直接设置位置
+                cardRect.anchoredPosition = targetPos;
+            }
+        }
+    }
+    
+    void ClearDisplayedCards()
+    {
+        if (cardDisplayContainer == null) return;
+        
+        foreach (Transform child in cardDisplayContainer)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }
