@@ -919,6 +919,15 @@ public class SolitaireGameManager : MonoBehaviour
             }
         }
         
+        // 清理敌人
+        if (enemySpawnPoint != null)
+        {
+            foreach (Transform child in enemySpawnPoint)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        
         // 清理数据结构
         tableau.Clear();
         foundations.Clear();
