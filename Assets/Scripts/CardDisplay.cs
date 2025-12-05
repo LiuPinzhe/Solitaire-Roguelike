@@ -266,32 +266,43 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             {
                 columnIndex = i;
                 
-                // 从当前牌开始检查连续序列
-                for (int j = cardIndex; j < column.Count; j++)
+                // 太空卡牌特殊能力：拖动时带上下面的所有卡牌
+                if (this.GetCard().set == "Space/Backsides/Classic")
                 {
-                    CardDisplay currentCard = column[j];
-                    
-                    // 检查是否连续
-                    if (sequence.Count == 0)
+                    for (int j = cardIndex; j < column.Count; j++)
                     {
-                        sequence.Add(currentCard);
+                        sequence.Add(column[j]);
                     }
-                    else
+                }
+                else
+                {
+                    // 从当前牌开始检查连续序列
+                    for (int j = cardIndex; j < column.Count; j++)
                     {
-                        CardDisplay prevCard = sequence[sequence.Count - 1];
-                        bool normalSequence = (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 1;
-                        bool forestSequence = (prevCard.GetCard().set == "Forest/Backsides/Classic" && 
-                                              (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1) ||
-                                             (currentCard.GetCard().set == "Forest/Backsides/Classic" && 
-                                              (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1);
+                        CardDisplay currentCard = column[j];
                         
-                        if (normalSequence || forestSequence)
+                        // 检查是否连续
+                        if (sequence.Count == 0)
                         {
                             sequence.Add(currentCard);
                         }
                         else
                         {
-                            break; // 不连续就停止
+                            CardDisplay prevCard = sequence[sequence.Count - 1];
+                            bool normalSequence = (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 1;
+                            bool forestSequence = (prevCard.GetCard().set == "Forest/Backsides/Classic" && 
+                                                  (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1) ||
+                                                 (currentCard.GetCard().set == "Forest/Backsides/Classic" && 
+                                                  (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1);
+                            
+                            if (normalSequence || forestSequence)
+                            {
+                                sequence.Add(currentCard);
+                            }
+                            else
+                            {
+                                break; // 不连续就停止
+                            }
                         }
                     }
                 }
@@ -304,6 +315,10 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     
     bool CanDragFromPosition()
     {
+        // 太空卡牌永远可以被拖动
+        if (GetCard().set == "Space/Backsides/Classic")
+            return true;
+            
         SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
         for (int i = 0; i < 7; i++)
         {
