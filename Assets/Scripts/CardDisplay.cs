@@ -100,6 +100,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             gm.SelectCardForSwap(this);
             return;
         }
+        
+        // 检查是否在S02模式
+        if (gm != null && gm.IsInS02Mode())
+        {
+            gm.SelectCardForS02(this);
+            return;
+        }
     }
     
     public void OnBeginDrag(PointerEventData eventData)

@@ -19,6 +19,7 @@ public class SolitaireGameManager : MonoBehaviour
     [SerializeField] private GameObject batPrefab;
     [SerializeField] private GameObject jokerPrefab;
     [SerializeField] private GameObject joker2Prefab;
+    [SerializeField] private GameObject s02Prefab;
     
     [Header("Enemy System")]
     [SerializeField] private Transform enemySpawnPoint;
@@ -38,6 +39,7 @@ public class SolitaireGameManager : MonoBehaviour
     private bool cardSwapMode = false;
     private CardDisplay firstSelectedCard = null;
     private bool isDealing = false;
+    private bool s02Mode = false;
     
     void Start()
     {
@@ -407,7 +409,10 @@ public class SolitaireGameManager : MonoBehaviour
         bool fireRule = (card.set == "Fire/Backsides/Classic" && (int)card.rank == (int)topCard.rank) ||
                        (topCard.set == "Fire/Backsides/Classic" && (int)card.rank == (int)topCard.rank);
         
-        bool canPlace = normalRule || forestRule || fireRule;
+        // S02万能卡规则：S02可以接在任何卡下面，任何卡也可以接在S02下面
+        bool s02Rule = card.set == "S02" || topCard.set == "S02";
+        
+        bool canPlace = normalRule || forestRule || fireRule || s02Rule;
         
         Debug.Log($"Trying to move {card.GetCardName()} to {topCard.GetCardName()}: normalRule={normalRule}, forestRule={forestRule}, canPlace={canPlace}");
         
@@ -538,6 +543,12 @@ public class SolitaireGameManager : MonoBehaviour
                 GameObject joker2 = Instantiate(joker2Prefab, handArea);
                 joker2.SetActive(true);
             }
+            
+            if (s02Prefab != null)
+            {
+                GameObject s02 = Instantiate(s02Prefab, handArea);
+                s02.SetActive(true);
+            }
         }
     }
     
@@ -591,6 +602,12 @@ public class SolitaireGameManager : MonoBehaviour
         if (cardSwapMode && Mouse.current.leftButton.wasPressedThisFrame)
         {
             CheckForCancelSwap();
+        }
+        
+        // 在S02模式下检测点击
+        if (s02Mode && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            CheckForCancelS02();
         }
     }
     
@@ -737,6 +754,113 @@ public class SolitaireGameManager : MonoBehaviour
             }
             
             cardSwapMode = false;
+        }
+    }
+    
+    // S02万能卡功能
+    public void EnterS02Mode()
+    {
+        s02Mode = true;
+    }
+    
+    public bool IsInS02Mode()
+    {
+        return s02Mode;
+    }
+    
+    public void SelectCardForS02(CardDisplay targetCard)
+    {
+        if (!s02Mode) return;
+        
+        // 创建万能梅花J卡牌
+        Sprite[] forestSprites = Resources.LoadAll<Sprite>("Forest/ForestCards");
+        Sprite jackSprite = forestSprites.Length > 46 ? forestSprites[46] : null;
+        Card s02Card = new Card(Card.Suit.Clubs, Card.Rank.Jack, jackSprite, "S02");
+        
+        // 在目标卡牌下方插入S02卡
+        InsertS02Card(targetCard, s02Card);
+        
+        // 重置S02状态
+        S02 s02Component = FindObjectOfType<S02>();
+        if (s02Component != null)
+        {
+            s02Component.ResetS02();
+        }
+        s02Mode = false;
+    }
+    
+    void InsertS02Card(CardDisplay targetCard, Card s02Card)
+    {
+        // 找到目标卡牌所在的列
+        for (int col = 0; col < tableau.Count; col++)
+        {
+            int targetIndex = tableau[col].IndexOf(targetCard);
+            if (targetIndex >= 0)
+            {
+                // 创建S02卡牌GameObject
+                GameObject s02CardObj = Instantiate(cardPrefab, tableauColumns[col]);
+                CardDisplay s02Display = s02CardObj.GetComponent<CardDisplay>();
+                s02Display.SetCard(s02Card);
+                s02Display.RevealCard();
+                
+                // 插入到目标卡牌下方
+                tableau[col].Insert(targetIndex + 1, s02Display);
+                
+                // 重新排列所有卡牌位置
+                RearrangeColumn(col);
+                break;
+            }
+        }
+    }
+    
+    void RearrangeColumn(int columnIndex)
+    {
+        float cardHeight = 30f;
+        for (int i = 0; i < tableau[columnIndex].Count; i++)
+        {
+            CardDisplay card = tableau[columnIndex][i];
+            RectTransform cardRect = card.GetComponent<RectTransform>();
+            cardRect.sizeDelta = new Vector2(46f, 70f);
+            cardRect.anchorMin = new Vector2(0.5f, 1f);
+            cardRect.anchorMax = new Vector2(0.5f, 1f);
+            cardRect.pivot = new Vector2(0.5f, 1f);
+            cardRect.anchoredPosition = new Vector2(0, -i * cardHeight);
+        }
+    }
+    
+    void CheckForCancelS02()
+    {
+        var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
+        var eventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
+        eventData.position = Mouse.current.position.ReadValue();
+        UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, raycastResults);
+        
+        bool hitCard = false;
+        foreach (var result in raycastResults)
+        {
+            if (result.gameObject.GetComponent<CardDisplay>() != null)
+            {
+                hitCard = true;
+                break;
+            }
+        }
+        
+        if (!hitCard)
+        {
+            CancelS02();
+        }
+    }
+    
+    public void CancelS02()
+    {
+        if (s02Mode)
+        {
+            S02 s02Component = FindObjectOfType<S02>();
+            if (s02Component != null)
+            {
+                s02Component.ResetS02();
+            }
+            s02Mode = false;
         }
     }
     
