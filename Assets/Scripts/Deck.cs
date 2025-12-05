@@ -18,9 +18,9 @@ public class Deck : MonoBehaviour
         cards.Clear();
         
         LoadClassicCards();
-        // LoadForestCards();
+        LoadForestCards();
         // LoadSpaceCards();
-        // LoadFireCards();
+        LoadFireCards();
     }
     
     void LoadClassicCards()

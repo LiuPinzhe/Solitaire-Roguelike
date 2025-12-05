@@ -399,11 +399,13 @@ public class SolitaireGameManager : MonoBehaviour
         Card topCard = column[column.Count - 1].GetCard();
         bool normalRule = (int)card.rank == (int)topCard.rank - 1; // 正常规则：小1
         
-        // 森林卡牌特殊规则：只有森林卡牌可以接在比它小1的卡牌下面
-        bool forestRule = card.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1;
+        // 森林卡牌双向规则：森林卡可以接在±1的卡牌下面，其他卡也可以接在森林卡的±1位置
+        bool forestRule = (card.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1) ||
+                         (topCard.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1);
         
-        // 火焰卡牌特殊规则：可以接在和它数字一样的卡牌后面
-        bool fireRule = card.set == "Fire/Backsides/Classic" && (int)card.rank == (int)topCard.rank;
+        // 火焰卡牌双向规则：火焰卡可以接在同点数卡牌下面，其他卡也可以接在火焰卡同点数位置
+        bool fireRule = (card.set == "Fire/Backsides/Classic" && (int)card.rank == (int)topCard.rank) ||
+                       (topCard.set == "Fire/Backsides/Classic" && (int)card.rank == (int)topCard.rank);
         
         bool canPlace = normalRule || forestRule || fireRule;
         

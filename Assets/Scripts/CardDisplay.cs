@@ -296,13 +296,18 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                         {
                             CardDisplay prevCard = sequence[sequence.Count - 1];
                             bool normalSequence = (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 1;
+                            
+                            // 森林卡双向序列：森林卡可以接+1，其他卡也可以接在森林卡的+1位置
                             bool forestSequence = (prevCard.GetCard().set == "Forest/Backsides/Classic" && 
                                                   (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1) ||
                                                  (currentCard.GetCard().set == "Forest/Backsides/Classic" && 
                                                   (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1);
                             
-                            bool fireSequence = currentCard.GetCard().set == "Fire/Backsides/Classic" && 
-                                               (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank;
+                            // 火焰卡双向序列：火焰卡可以接同点数，其他卡也可以接在火焰卡同点数位置
+                            bool fireSequence = (currentCard.GetCard().set == "Fire/Backsides/Classic" && 
+                                               (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank) ||
+                                              (prevCard.GetCard().set == "Fire/Backsides/Classic" && 
+                                               (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank);
                             
                             if (normalSequence || forestSequence || fireSequence)
                             {
@@ -339,13 +344,18 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 for (int j = idx; j < col.Count - 1; j++)
                 {
                     bool normalSequence = (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank - 1;
+                    
+                    // 森林卡双向检查
                     bool forestSequence = (col[j].GetCard().set == "Forest/Backsides/Classic" && 
                                           (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1) ||
                                          (col[j + 1].GetCard().set == "Forest/Backsides/Classic" && 
                                           (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1);
                     
-                    bool fireSequence = col[j + 1].GetCard().set == "Fire/Backsides/Classic" && 
-                                       (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank;
+                    // 火焰卡双向检查
+                    bool fireSequence = (col[j + 1].GetCard().set == "Fire/Backsides/Classic" && 
+                                       (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank) ||
+                                      (col[j].GetCard().set == "Fire/Backsides/Classic" && 
+                                       (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank);
                     
                     if (!normalSequence && !forestSequence && !fireSequence)
                         return false;
