@@ -35,16 +35,14 @@ public class SolitaireGameManager : MonoBehaviour
     private List<List<CardDisplay>> foundations = new List<List<CardDisplay>>();
     private List<CardDisplay> stock = new List<CardDisplay>();
     private List<CardDisplay> waste = new List<CardDisplay>();
-    private bool cardSelectionMode = false;
-    private bool cardSwapMode = false;
-    private CardDisplay firstSelectedCard = null;
     private bool isDealing = false;
-    private bool s02Mode = false;
+    private AbilityManager abilityManager;
     
     void Start()
     {
         Debug.Log("SolitaireGameManager Start called");
         deck = FindFirstObjectByType<Deck>();
+        abilityManager = FindFirstObjectByType<AbilityManager>();
         if (deck == null)
         {
             Debug.LogError("Deck not found! Make sure there's a Deck component in the scene.");
@@ -312,6 +310,49 @@ public class SolitaireGameManager : MonoBehaviour
         RemoveCardFromCurrentLocation(cardDisplay);
     }
     
+    public void RemoveCardFromCurrentLocation(CardDisplay cardDisplay)
+    {
+        // 从 tableau中移除
+        for (int i = 0; i < tableau.Count; i++)
+        {
+            if (tableau[i].Remove(cardDisplay))
+            {
+                Debug.Log($"Removed {cardDisplay.GetCard().GetCardName()} from column {i}");
+                return;
+            }
+        }
+        
+        // 从 foundations中移除
+        for (int i = 0; i < foundations.Count; i++)
+        {
+            if (foundations[i].Remove(cardDisplay))
+                return;
+        }
+        
+        // 从 waste中移除
+        waste.Remove(cardDisplay);
+    }
+    
+    public List<List<CardDisplay>> GetTableauData()
+    {
+        return tableau;
+    }
+    
+    public void RearrangeColumn(int columnIndex)
+    {
+        float cardHeight = 30f;
+        for (int i = 0; i < tableau[columnIndex].Count; i++)
+        {
+            CardDisplay card = tableau[columnIndex][i];
+            RectTransform cardRect = card.GetComponent<RectTransform>();
+            cardRect.sizeDelta = new Vector2(46f, 70f);
+            cardRect.anchorMin = new Vector2(0.5f, 1f);
+            cardRect.anchorMax = new Vector2(0.5f, 1f);
+            cardRect.pivot = new Vector2(0.5f, 1f);
+            cardRect.anchoredPosition = new Vector2(0, -i * cardHeight);
+        }
+    }
+    
     public void CheckAndRevealAllTopCards()
     {
         CheckAndRevealTopCards();
@@ -465,29 +506,7 @@ public class SolitaireGameManager : MonoBehaviour
         }
     }
     
-    private void RemoveCardFromCurrentLocation(CardDisplay cardDisplay)
-    {
-        // 从tableau中移除
-        for (int i = 0; i < tableau.Count; i++)
-        {
-            if (tableau[i].Remove(cardDisplay))
-            {
-                Debug.Log($"Removed {cardDisplay.GetCard().GetCardName()} from column {i}");
-                // 注意：不要在这里立即检查翻牌，等所有牌移动完成后再统一检查
-                return;
-            }
-        }
-        
-        // 从foundations中移除
-        for (int i = 0; i < foundations.Count; i++)
-        {
-            if (foundations[i].Remove(cardDisplay))
-                return;
-        }
-        
-        // 从waste中移除
-        waste.Remove(cardDisplay);
-    }
+
     
     private void CheckAndRevealTopCard(int columnIndex)
     {
@@ -549,317 +568,25 @@ public class SolitaireGameManager : MonoBehaviour
         }
     }
     
-    public void EnterCardSelectionMode()
-    {
-        Debug.Log($"[GameManager] EnterCardSelectionMode called");
-        cardSelectionMode = true;
-        Debug.Log($"[GameManager] Card selection mode activated");
-    }
+
     
-    public void SelectCardForRemoval(CardDisplay cardDisplay)
-    {
-        Debug.Log($"[GameManager] SelectCardForRemoval called, cardSelectionMode: {cardSelectionMode}");
-        if (cardSelectionMode)
-        {
-            Debug.Log($"[GameManager] Removing card: {cardDisplay.GetCard().GetCardName()}");
-            // 移除选中的卡牌
-            RemoveCardFromCurrentLocation(cardDisplay);
-            Destroy(cardDisplay.gameObject);
-            
-            // 检查并翻开新的顶牌
-            CheckAndRevealTopCards();
-            
-            // 重置Joker状态
-            Joker joker = FindObjectOfType<Joker>();
-            if (joker != null)
-            {
-                joker.ResetJoker();
-            }
-            
-            // 退出选择模式
-            cardSelectionMode = false;
-            Debug.Log($"[GameManager] Card selection mode deactivated");
-        }
-    }
+    // 委托给AbilityManager的方法
+    public void EnterCardSelectionMode() => abilityManager?.EnterCardSelectionMode();
+    public bool IsInCardSelectionMode() => abilityManager?.IsInCardSelectionMode() ?? false;
+    public void SelectCardForRemoval(CardDisplay cardDisplay) => abilityManager?.SelectCardForRemoval(cardDisplay);
+    public void CancelCardSelection() => abilityManager?.CancelCardSelection();
     
-    public bool IsInCardSelectionMode()
-    {
-        return cardSelectionMode;
-    }
+    public void EnterCardSwapMode() => abilityManager?.EnterCardSwapMode();
+    public bool IsInCardSwapMode() => abilityManager?.IsInCardSwapMode() ?? false;
+    public void SelectCardForSwap(CardDisplay cardDisplay) => abilityManager?.SelectCardForSwap(cardDisplay);
+    public void CancelCardSwap() => abilityManager?.CancelCardSwap();
     
-    void Update()
-    {
-        // 在选择模式下检测点击
-        if (cardSelectionMode && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            CheckForCancelClick();
-        }
-        
-        // 在交换模式下检测点击
-        if (cardSwapMode && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            CheckForCancelSwap();
-        }
-        
-        // 在S02模式下检测点击
-        if (s02Mode && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            CheckForCancelS02();
-        }
-    }
+    public void EnterS02Mode() => abilityManager?.EnterS02Mode();
+    public bool IsInS02Mode() => abilityManager?.IsInS02Mode() ?? false;
+    public void SelectCardForS02(CardDisplay targetCard) => abilityManager?.SelectCardForS02(targetCard);
+    public void CancelS02() => abilityManager?.CancelS02();
     
-    void CheckForCancelClick()
-    {
-        // 检查点击是否命中了卡牌
-        var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
-        var eventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
-        eventData.position = Mouse.current.position.ReadValue();
-        UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, raycastResults);
-        
-        bool hitCard = false;
-        foreach (var result in raycastResults)
-        {
-            if (result.gameObject.GetComponent<CardDisplay>() != null)
-            {
-                hitCard = true;
-                break;
-            }
-        }
-        
-        // 如果没有点击到卡牌，则取消选择
-        if (!hitCard)
-        {
-            CancelCardSelection();
-        }
-    }
-    
-    public void CancelCardSelection()
-    {
-        Debug.Log($"[GameManager] CancelCardSelection called");
-        if (cardSelectionMode)
-        {
-            // 重置Joker状态
-            Joker joker = FindObjectOfType<Joker>();
-            if (joker != null)
-            {
-                joker.ResetJoker();
-            }
-            
-            // 退出选择模式
-            cardSelectionMode = false;
-            Debug.Log($"[GameManager] Card selection mode canceled");
-        }
-    }
-    
-    // Joker2 交换功能
-    public void EnterCardSwapMode()
-    {
-        cardSwapMode = true;
-        firstSelectedCard = null;
-    }
-    
-    public bool IsInCardSwapMode()
-    {
-        return cardSwapMode;
-    }
-    
-    public void SelectCardForSwap(CardDisplay cardDisplay)
-    {
-        if (!cardSwapMode) return;
-        
-        if (firstSelectedCard == null)
-        {
-            // 选择第一张牌
-            firstSelectedCard = cardDisplay;
-            cardDisplay.GetComponent<Image>().color = Color.yellow; // 高亮显示
-        }
-        else if (firstSelectedCard == cardDisplay)
-        {
-            // 取消选择
-            cardDisplay.GetComponent<Image>().color = Color.white;
-            firstSelectedCard = null;
-        }
-        else
-        {
-            // 选择第二张牌，执行交换
-            SwapCards(firstSelectedCard, cardDisplay);
-            
-            // 重置状态
-            firstSelectedCard.GetComponent<Image>().color = Color.white;
-            firstSelectedCard = null;
-            
-            // 重置Joker2并退出交换模式
-            Joker2 joker2 = FindObjectOfType<Joker2>();
-            if (joker2 != null)
-            {
-                joker2.ResetJoker2();
-            }
-            cardSwapMode = false;
-        }
-    }
-    
-    void SwapCards(CardDisplay card1, CardDisplay card2)
-    {
-        // 交换卡牌数据
-        Card tempCard = card1.GetCard();
-        Sprite tempSprite = card1.GetComponent<Image>().sprite;
-        
-        card1.SetCard(card2.GetCard());
-        card2.SetCard(tempCard);
-    }
-    
-    void CheckForCancelSwap()
-    {
-        // 检查点击是否命中了卡牌
-        var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
-        var eventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
-        eventData.position = Mouse.current.position.ReadValue();
-        UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, raycastResults);
-        
-        bool hitCard = false;
-        foreach (var result in raycastResults)
-        {
-            if (result.gameObject.GetComponent<CardDisplay>() != null)
-            {
-                hitCard = true;
-                break;
-            }
-        }
-        
-        if (!hitCard)
-        {
-            CancelCardSwap();
-        }
-    }
-    
-    public void CancelCardSwap()
-    {
-        if (cardSwapMode)
-        {
-            // 重置选中的牌
-            if (firstSelectedCard != null)
-            {
-                firstSelectedCard.GetComponent<Image>().color = Color.white;
-                firstSelectedCard = null;
-            }
-            
-            // 重置Joker2状态
-            Joker2 joker2 = FindObjectOfType<Joker2>();
-            if (joker2 != null)
-            {
-                joker2.ResetJoker2();
-            }
-            
-            cardSwapMode = false;
-        }
-    }
-    
-    // S02万能卡功能
-    public void EnterS02Mode()
-    {
-        s02Mode = true;
-    }
-    
-    public bool IsInS02Mode()
-    {
-        return s02Mode;
-    }
-    
-    public void SelectCardForS02(CardDisplay targetCard)
-    {
-        if (!s02Mode) return;
-        
-        // 创建万能梅花J卡牌
-        Sprite[] forestSprites = Resources.LoadAll<Sprite>("Forest/ForestCards");
-        Sprite jackSprite = forestSprites.Length > 46 ? forestSprites[46] : null;
-        Card s02Card = new Card(Card.Suit.Clubs, Card.Rank.Jack, jackSprite, "S02");
-        
-        // 在目标卡牌下方插入S02卡
-        InsertS02Card(targetCard, s02Card);
-        
-        // 重置S02状态
-        S02 s02Component = FindObjectOfType<S02>();
-        if (s02Component != null)
-        {
-            s02Component.ResetS02();
-        }
-        s02Mode = false;
-    }
-    
-    void InsertS02Card(CardDisplay targetCard, Card s02Card)
-    {
-        // 找到目标卡牌所在的列
-        for (int col = 0; col < tableau.Count; col++)
-        {
-            int targetIndex = tableau[col].IndexOf(targetCard);
-            if (targetIndex >= 0)
-            {
-                // 创建S02卡牌GameObject
-                GameObject s02CardObj = Instantiate(cardPrefab, tableauColumns[col]);
-                CardDisplay s02Display = s02CardObj.GetComponent<CardDisplay>();
-                s02Display.SetCard(s02Card);
-                s02Display.RevealCard();
-                
-                // 插入到目标卡牌下方
-                tableau[col].Insert(targetIndex + 1, s02Display);
-                
-                // 重新排列所有卡牌位置
-                RearrangeColumn(col);
-                break;
-            }
-        }
-    }
-    
-    void RearrangeColumn(int columnIndex)
-    {
-        float cardHeight = 30f;
-        for (int i = 0; i < tableau[columnIndex].Count; i++)
-        {
-            CardDisplay card = tableau[columnIndex][i];
-            RectTransform cardRect = card.GetComponent<RectTransform>();
-            cardRect.sizeDelta = new Vector2(46f, 70f);
-            cardRect.anchorMin = new Vector2(0.5f, 1f);
-            cardRect.anchorMax = new Vector2(0.5f, 1f);
-            cardRect.pivot = new Vector2(0.5f, 1f);
-            cardRect.anchoredPosition = new Vector2(0, -i * cardHeight);
-        }
-    }
-    
-    void CheckForCancelS02()
-    {
-        var raycastResults = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
-        var eventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
-        eventData.position = Mouse.current.position.ReadValue();
-        UnityEngine.EventSystems.EventSystem.current.RaycastAll(eventData, raycastResults);
-        
-        bool hitCard = false;
-        foreach (var result in raycastResults)
-        {
-            if (result.gameObject.GetComponent<CardDisplay>() != null)
-            {
-                hitCard = true;
-                break;
-            }
-        }
-        
-        if (!hitCard)
-        {
-            CancelS02();
-        }
-    }
-    
-    public void CancelS02()
-    {
-        if (s02Mode)
-        {
-            S02 s02Component = FindObjectOfType<S02>();
-            if (s02Component != null)
-            {
-                s02Component.ResetS02();
-            }
-            s02Mode = false;
-        }
-    }
+
     
     public void ResetGame()
     {
@@ -867,10 +594,8 @@ public class SolitaireGameManager : MonoBehaviour
         ClearAllCards();
         
         // 重置游戏状态
-        cardSelectionMode = false;
-        cardSwapMode = false;
-        firstSelectedCard = null;
         isDealing = false;
+        abilityManager?.ResetAllModes();
         
         // 重新初始化牌组和游戏
         deck.InitializeDeck();

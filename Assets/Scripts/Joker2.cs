@@ -5,11 +5,11 @@ public class Joker2 : MonoBehaviour
 {
     [SerializeField] private Image jokerImage;
     private bool isActive = true;
-    private SolitaireGameManager gameManager;
+    private AbilityManager abilityManager;
     
     void Start()
     {
-        gameManager = FindObjectOfType<SolitaireGameManager>();
+        abilityManager = FindObjectOfType<AbilityManager>();
         LoadJokerSprite();
         SetupButton();
     }
@@ -38,9 +38,9 @@ public class Joker2 : MonoBehaviour
     public void ActivateJoker2()
     {
         // 检查是否已经在交换模式中，如果是则取消
-        if (gameManager != null && gameManager.IsInCardSwapMode())
+        if (abilityManager != null && abilityManager.IsInCardSwapMode())
         {
-            gameManager.CancelCardSwap();
+            abilityManager.CancelCardSwap();
             return;
         }
         
@@ -52,9 +52,9 @@ public class Joker2 : MonoBehaviour
         }
         
         // 启用交换模式
-        if (gameManager != null)
+        if (abilityManager != null)
         {
-            gameManager.EnterCardSwapMode();
+            abilityManager.EnterCardSwapMode();
         }
     }
     

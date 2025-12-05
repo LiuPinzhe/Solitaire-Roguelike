@@ -5,11 +5,11 @@ public class S02 : MonoBehaviour
 {
     [SerializeField] private Image cardImage;
     private bool isActive = false;
-    private SolitaireGameManager gameManager;
+    private AbilityManager abilityManager;
     
     void Start()
     {
-        gameManager = FindFirstObjectByType<SolitaireGameManager>();
+        abilityManager = FindFirstObjectByType<AbilityManager>();
         LoadS02Sprite();
         SetupButton();
     }
@@ -43,7 +43,7 @@ public class S02 : MonoBehaviour
             // 激活S02模式
             isActive = true;
             cardImage.color = Color.yellow;
-            gameManager.EnterS02Mode();
+            abilityManager.EnterS02Mode();
         }
         else
         {

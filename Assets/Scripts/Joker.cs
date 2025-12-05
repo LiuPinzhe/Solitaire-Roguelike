@@ -5,14 +5,14 @@ public class Joker : MonoBehaviour
 {
     [SerializeField] private Image jokerImage;
     private bool isActive = true;
-    private SolitaireGameManager gameManager;
+    private AbilityManager abilityManager;
     
     void Start()
     {
-        gameManager = FindObjectOfType<SolitaireGameManager>();
+        abilityManager = FindObjectOfType<AbilityManager>();
         LoadJokerSprite();
         SetupButton();
-        Debug.Log($"[Joker] Joker initialized, gameManager found: {gameManager != null}");
+        Debug.Log($"[Joker] Joker initialized, abilityManager found: {abilityManager != null}");
     }
     
     void SetupButton()
@@ -44,10 +44,10 @@ public class Joker : MonoBehaviour
         Debug.Log($"[Joker] ActivateJoker called");
         
         // 检查是否已经在选择模式中，如果是则取消
-        if (gameManager != null && gameManager.IsInCardSelectionMode())
+        if (abilityManager != null && abilityManager.IsInCardSelectionMode())
         {
             Debug.Log($"[Joker] Canceling card selection mode");
-            gameManager.CancelCardSelection();
+            abilityManager.CancelCardSelection();
             return;
         }
         
@@ -64,14 +64,14 @@ public class Joker : MonoBehaviour
         }
         
         // 启用选择模式
-        if (gameManager != null)
+        if (abilityManager != null)
         {
             Debug.Log($"[Joker] Calling EnterCardSelectionMode");
-            gameManager.EnterCardSelectionMode();
+            abilityManager.EnterCardSelectionMode();
         }
         else
         {
-            Debug.LogError($"[Joker] gameManager is null!");
+            Debug.LogError($"[Joker] abilityManager is null!");
         }
     }
     
