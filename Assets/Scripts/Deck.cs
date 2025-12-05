@@ -4,37 +4,31 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     [SerializeField] private List<Card> cards = new List<Card>();
+    [SerializeField] private List<Card> allCards = new List<Card>(); // Master list of all cards
     [SerializeField] private Sprite cardBackSprite;
     
     void Start()
     {
-        Debug.Log("Deck Start called");
         InitializeDeck();
         ShuffleDeck();
-        Debug.Log($"Deck initialized with {cards.Count} cards");
     }
     
     public void InitializeDeck()
     {
         cards.Clear();
-        Debug.Log("Initializing deck...");
         
         LoadClassicCards();
-        LoadForestCards();
-        LoadSpaceCards();
-        LoadFireCards();
-        
-        Debug.Log("Deck initialized with " + cards.Count + " cards");
+        // LoadForestCards();
+        // LoadSpaceCards();
+        // LoadFireCards();
     }
     
     void LoadClassicCards()
     {
         Sprite[] allSprites = Resources.LoadAll<Sprite>("Classic/ClassicCards");
-        Debug.Log("Found " + allSprites.Length + " sprites in Classic folder");
         
         if (allSprites.Length == 0)
         {
-            Debug.LogError("No sprites found in Resources/Classic/ClassicCards!");
             CreateTestCards();
             return;
         }
@@ -66,6 +60,7 @@ public class Deck : MonoBehaviour
             
             Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Classic");
             cards.Add(newCard);
+            allCards.Add(newCard);
         }
     }
     
@@ -195,18 +190,15 @@ public class Deck : MonoBehaviour
     
     void CreateTestCards()
     {
-        Debug.Log("Creating test cards without sprites...");
-        
         for (int suit = 0; suit < 4; suit++)
         {
             for (int rank = 1; rank <= 13; rank++)
             {
                 Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, null);
                 cards.Add(newCard);
+                allCards.Add(newCard);
             }
         }
-        
-        Debug.Log($"Created {cards.Count} test cards");
     }
     
     public void ShuffleDeck()
@@ -238,6 +230,12 @@ public class Deck : MonoBehaviour
     
     public void AddCard(Card card)
     {
-        cards.Add(card);
+        allCards.Add(card);
+    }
+    
+    public void ResetDeckForNewGame()
+    {
+        cards.Clear();
+        cards.AddRange(allCards);
     }
 }

@@ -3358,7 +3358,7 @@ MonoBehaviour:
   rewardCardAreas:
   - {fileID: 39035497}
   - {fileID: 924293718}
-  - {fileID: 924293718}
+  - {fileID: 1771175103}
   cardPrefab: {fileID: 4780273790040297525, guid: b40925aa22bb21647a1da3923550429f, type: 3}
 --- !u!1 &1930437180
 GameObject:

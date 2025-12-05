@@ -148,7 +148,8 @@ public class SolitaireGameManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"No card available for column {col}, row {row}");
+                    Debug.LogError($"No card available for column {col}, row {row}. Deck has {deck.GetRemainingCards()} cards left!");
+                    break;
                 }
             }
         }
@@ -510,8 +511,14 @@ public class SolitaireGameManager : MonoBehaviour
     
     public void StartNextLevel()
     {
-        // Use same reset logic as reset button
-        ResetGame();
+        // Clear cards but don't reinitialize deck (keep reward cards)
+        ClearAllCards();
+        
+        // Reset deck with all cards (including rewards) then shuffle
+        deck.ResetDeckForNewGame();
+        deck.ShuffleDeck();
+        InitializeGame();
+        SpawnNextEnemy();
     }
     
     void InitializeHandArea()

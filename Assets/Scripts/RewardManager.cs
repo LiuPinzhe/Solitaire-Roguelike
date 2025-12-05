@@ -28,18 +28,9 @@ public class RewardManager : MonoBehaviour
     
     public void ShowRewards()
     {
-        Debug.Log("ShowRewards called");
         GenerateRewardOptions();
         DisplayRewardOptions();
-        if (rewardCanvas != null)
-        {
-            Debug.Log("Activating reward canvas");
-            rewardCanvas.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Reward canvas is null!");
-        }
+        rewardCanvas.SetActive(true);
     }
     
     void GenerateRewardOptions()
