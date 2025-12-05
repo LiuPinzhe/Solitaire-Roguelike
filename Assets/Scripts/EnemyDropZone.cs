@@ -39,7 +39,7 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
     
     System.Collections.IEnumerator DelayedDamage(int damage)
     {
-        yield return new WaitForSeconds(2.5f); // 等待动画播放完成
+        yield return new WaitForSeconds(4.0f); // 等待伤害计算动画完全结束
         
         // 对敌人造成伤害
         if (enemy != null && enemy.IsAlive())

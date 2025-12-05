@@ -81,21 +81,21 @@ public class DamageCalculationUI : MonoBehaviour
         // 逐步显示计算过程
         if (chainLengthText != null)
         {
-            chainLengthText.text = $"链长度: {chainLength} × 4 = {chainDamage}";
+            chainLengthText.text = $"{chainLength} × 4 = {chainDamage}";
             Debug.Log($"Set chainLengthText: {chainLengthText.text}");
         }
         yield return new WaitForSeconds(0.8f);
         
         if (headRankText != null)
         {
-            headRankText.text = $"首牌点数: ({headRank} - 1) × 2 = {rankDamage}";
+            headRankText.text = $"({headRank} - 1) × 2 = {rankDamage}";
             Debug.Log($"Set headRankText: {headRankText.text}");
         }
         yield return new WaitForSeconds(0.8f);
         
         if (bonus > 0 && bonusText != null)
         {
-            bonusText.text = $"长链奖励: {chainLength} × {chainLength} = {bonus}";
+            bonusText.text = $"{chainLength} × {chainLength} = {bonus}";
             Debug.Log($"Set bonusText: {bonusText.text}");
             yield return new WaitForSeconds(0.8f);
         }
@@ -103,7 +103,7 @@ public class DamageCalculationUI : MonoBehaviour
         // 显示总伤害
         if (totalDamageText != null)
         {
-            totalDamageText.text = $"总伤害: {totalDamage}";
+            totalDamageText.text = $"{totalDamage}";
             totalDamageText.transform.localScale = Vector3.zero;
             totalDamageText.transform.DOScale(1.2f, 0.3f).SetEase(Ease.OutBack);
             Debug.Log($"Set totalDamageText: {totalDamageText.text}");
