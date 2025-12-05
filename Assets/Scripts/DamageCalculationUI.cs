@@ -122,12 +122,12 @@ public class DamageCalculationUI : MonoBehaviour
     {
         int cardCount = sequence.Count;
         
-        // 根据卡牌数量调整间距
+        // 多行布局参数
         float cardWidth = 80f;
+        float cardHeight = 120f;
         float spacing = 35f;
-        
-        // 计算每行卡牌数
-        int cardsPerRow = Mathf.Min(6, cardCount);
+        int maxCardsPerRow = 5;
+        float rowSpacing = 130f; // 行间距
         
         for (int i = 0; i < cardCount; i++)
         {
@@ -140,25 +140,25 @@ public class DamageCalculationUI : MonoBehaviour
                 cardDisplay.RevealCard();
                 
                 RectTransform cardRect = cardObj.GetComponent<RectTransform>();
-                cardRect.sizeDelta = new Vector2(cardWidth, 120f);
+                cardRect.sizeDelta = new Vector2(cardWidth, cardHeight);
                 
-                // 设置锚点为左上角，类似于tableau列
+                // 设置锚点为左上角
                 cardRect.anchorMin = new Vector2(0f, 1f);
                 cardRect.anchorMax = new Vector2(0f, 1f);
                 cardRect.pivot = new Vector2(0f, 1f);
                 
-                // 确保卡牌尺寸一致
-                cardRect.sizeDelta = new Vector2(cardWidth, 120f);
+                // 计算行列位置
+                int row = i / maxCardsPerRow;
+                int col = i % maxCardsPerRow;
                 
-                // 计算目标位置：从左到右按间距排列，每张卡牌有小的Y偏移确保层级正确
-                // 第一张卡牌在x=0位置，后续卡牌按spacing间距排列，Y轴略微向下偏移
-                Vector2 targetPos = new Vector2(i * spacing, -i * 0.5f);
+                // 计算目标位置
+                Vector2 targetPos = new Vector2(col * spacing, -row * rowSpacing);
                 
-                // 设置初始位置（从右侧飞入，保持相同的Y偏移）
-                Vector2 startPos = new Vector2(500f, -i * 0.5f);
+                // 设置初始位置（从右侧飞入）
+                Vector2 startPos = new Vector2(500f, -row * rowSpacing);
                 cardRect.anchoredPosition = startPos;
                 
-                // 设置正确的层级顺序（在动画前设置）
+                // 设置层级顺序
                 cardObj.transform.SetSiblingIndex(i);
                 
                 // 动画到目标位置
@@ -166,7 +166,6 @@ public class DamageCalculationUI : MonoBehaviour
                     .SetEase(Ease.OutBack)
                     .SetDelay(i * 0.08f);
                 
-                // 等待一小段时间再发下一张牌
                 yield return new WaitForSeconds(0.08f);
             }
         }
@@ -178,7 +177,7 @@ public class DamageCalculationUI : MonoBehaviour
     {
         if (cardDisplayContainer == null) yield break;
         
-        // 敌人位置（向右侧的第5张卡牌位置下方）
+        // 敌人位置
         Vector2 enemyPos = new Vector2(140f, -400f);
         
         // 获取所有卡牌并飞向敌人
