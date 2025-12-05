@@ -147,11 +147,15 @@ public class DamageCalculationUI : MonoBehaviour
                 cardRect.anchorMax = new Vector2(0f, 1f);
                 cardRect.pivot = new Vector2(0f, 1f);
                 
-                // 计算目标位置：从左到右按间距排列，统一Y位置
-                Vector2 targetPos = new Vector2(i * spacing, 0f);
+                // 确保卡牌尺寸一致
+                cardRect.sizeDelta = new Vector2(cardWidth, 120f);
                 
-                // 设置初始位置（从右侧飞入）
-                Vector2 startPos = new Vector2(500f, 0f);
+                // 计算目标位置：从左到右按间距排列，每张卡牌有小的Y偏移确保层级正确
+                // 第一张卡牌在x=0位置，后续卡牌按spacing间距排列，Y轴略微向下偏移
+                Vector2 targetPos = new Vector2(i * spacing, -i * 0.5f);
+                
+                // 设置初始位置（从右侧飞入，保持相同的Y偏移）
+                Vector2 startPos = new Vector2(500f, -i * 0.5f);
                 cardRect.anchoredPosition = startPos;
                 
                 // 设置正确的层级顺序（在动画前设置）
