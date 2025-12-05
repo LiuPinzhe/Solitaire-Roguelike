@@ -113,9 +113,9 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
-        // 在Joker选择模式下不允许拖拽
+        // 在Joker选择模式或交换模式下不允许拖拽
         SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
-        if (gm != null && gm.IsInCardSelectionMode())
+        if (gm != null && (gm.IsInCardSelectionMode() || gm.IsInCardSwapMode()))
         {
             return;
         }
@@ -182,10 +182,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (!isRevealed) return;
         
-        // 在Joker模式下不处理拖拽结束
+        // 在Joker模式下不处理拖拽结束，但要恢复透明度
         SolitaireGameManager gm = FindFirstObjectByType<SolitaireGameManager>();
         if (gm != null && (gm.IsInCardSelectionMode() || gm.IsInCardSwapMode()))
         {
+            // 恢复透明度和点击状态
+            canvasGroup.alpha = 1f;
+            canvasGroup.blocksRaycasts = true;
             return;
         }
         
