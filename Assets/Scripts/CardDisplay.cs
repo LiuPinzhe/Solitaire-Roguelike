@@ -319,7 +319,10 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                                               (prevCard.GetCard().set == "Fire/Backsides/Classic" && 
                                                (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank);
                             
-                            if (normalSequence || forestSequence || fireSequence)
+                            // S02万能卡序列：S02可以连接任何卡牌
+                            bool s02Sequence = currentCard.GetCard().set == "S02" || prevCard.GetCard().set == "S02";
+                            
+                            if (normalSequence || forestSequence || fireSequence || s02Sequence)
                             {
                                 sequence.Add(currentCard);
                             }
@@ -367,7 +370,10 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                                       (col[j].GetCard().set == "Fire/Backsides/Classic" && 
                                        (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank);
                     
-                    if (!normalSequence && !forestSequence && !fireSequence)
+                    // S02万能卡规则：S02可以连接任何卡牌
+                    bool s02Sequence = col[j].GetCard().set == "S02" || col[j + 1].GetCard().set == "S02";
+                    
+                    if (!normalSequence && !forestSequence && !fireSequence && !s02Sequence)
                         return false;
                 }
                 return true;
