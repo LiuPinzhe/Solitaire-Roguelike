@@ -96,10 +96,14 @@ public class DamageCalculationUI : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
         
-        // 淡出面板
+        // 卡牌飞向敌人，等待完成后再淡出面板
+        yield return StartCoroutine(AnimateCardsToEnemy());
+        
+        // 等待卡牌飞行完成后淡出面板
+        yield return new WaitForSeconds(0.7f); // 等待最后一张卡牌飞行完成
+        
         canvasGroup.DOFade(0f, 0.3f).OnComplete(() => {
             calculationPanel.SetActive(false);
-            ClearDisplayedCards();
             Debug.Log("Animation completed");
         });
     }
@@ -161,6 +165,46 @@ public class DamageCalculationUI : MonoBehaviour
                 // 等待一小段时间再发下一张牌
                 yield return new WaitForSeconds(0.08f);
             }
+        }
+        
+        yield return null;
+    }
+    
+    System.Collections.IEnumerator AnimateCardsToEnemy()
+    {
+        if (cardDisplayContainer == null) yield break;
+        
+        // 敌人位置（向右侧的第5张卡牌位置下方）
+        Vector2 enemyPos = new Vector2(140f, -400f);
+        
+        // 获取所有卡牌并飞向敌人
+        Transform[] cards = new Transform[cardDisplayContainer.childCount];
+        for (int i = 0; i < cardDisplayContainer.childCount; i++)
+        {
+            cards[i] = cardDisplayContainer.GetChild(i);
+        }
+        
+        foreach (Transform cardTransform in cards)
+        {
+            if (cardTransform != null)
+            {
+                RectTransform cardRect = cardTransform.GetComponent<RectTransform>();
+                if (cardRect != null)
+                {
+                    // 停止所有在运行的动画
+                    cardRect.DOKill();
+                    
+                    cardRect.DOAnchorPos(enemyPos, 0.6f)
+                        .SetEase(Ease.InQuad)
+                        .OnComplete(() => {
+                            if (cardTransform != null && cardTransform.gameObject != null)
+                                Destroy(cardTransform.gameObject);
+                        });
+                }
+            }
+            
+            // 卡牌间隔飞出
+            yield return new WaitForSeconds(0.1f);
         }
         
         yield return null;
