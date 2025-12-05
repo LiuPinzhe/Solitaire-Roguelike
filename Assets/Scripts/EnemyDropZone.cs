@@ -26,13 +26,25 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
             // 计算伤害（基于卡牌链长度和点数）
             int damage = CalculateDamage(sequence);
             
-            // 对敌人造成伤害
-            enemy.TakeDamage(damage);
+            // 显示伤害计算动画
+            DamageCalculationUI.ShowDamageCalculation(sequence, damage);
             
-            // 移除使用的卡牌
+            // 立即移除卡牌并延迟造成伤害
             RemoveCardSequence(sequence);
+            StartCoroutine(DelayedDamage(damage));
             
             Debug.Log($"Attacked enemy with {sequence.Count} cards for {damage} damage!");
+        }
+    }
+    
+    System.Collections.IEnumerator DelayedDamage(int damage)
+    {
+        yield return new WaitForSeconds(2.5f); // 等待动画播放完成
+        
+        // 对敌人造成伤害
+        if (enemy != null && enemy.IsAlive())
+        {
+            enemy.TakeDamage(damage);
         }
     }
     
@@ -57,11 +69,14 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
         
         foreach (CardDisplay card in sequence)
         {
-            // 从游戏数据中移除
-            gameManager.RemoveCardFromGame(card);
-            
-            // 销毁GameObject
-            Destroy(card.gameObject);
+            if (card != null)
+            {
+                // 从游戏数据中移除
+                gameManager.RemoveCardFromGame(card);
+                
+                // 销毁GameObject
+                Destroy(card.gameObject);
+            }
         }
         
         // 检查并翻开新的顶牌
