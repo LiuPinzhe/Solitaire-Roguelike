@@ -339,7 +339,8 @@ public class SolitaireGameManager : MonoBehaviour
             // 设置位置和尺寸
             RectTransform cardRect = card.GetComponent<RectTransform>();
             
-            // 设置卡牌尺寸为46*70
+            // 重置缩放和尺寸
+            card.transform.localScale = Vector3.one;
             cardRect.sizeDelta = new Vector2(46f, 70f);
             
             cardRect.anchorMin = new Vector2(0.5f, 1f);
@@ -429,6 +430,7 @@ public class SolitaireGameManager : MonoBehaviour
                 foundations[zoneIndex].Add(cardDisplay);
                 // 设置Foundation中卡牌的位置
                 cardDisplay.transform.SetParent(foundationPiles[zoneIndex], false);
+                cardDisplay.transform.localScale = Vector3.one;
                 RectTransform cardRect = cardDisplay.GetComponent<RectTransform>();
                 cardRect.anchoredPosition = Vector2.zero;
                 cardRect.sizeDelta = new Vector2(46f, 70f);

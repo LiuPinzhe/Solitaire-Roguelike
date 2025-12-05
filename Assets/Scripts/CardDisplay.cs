@@ -70,6 +70,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private CanvasGroup canvasGroup;
     private List<CardDisplay> draggedSequence = new List<CardDisplay>();
     private List<Vector3> originalPositions = new List<Vector3>();
+    private List<Vector2> originalSizes = new List<Vector2>();
     
     void Awake()
     {
@@ -121,11 +122,13 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         // 获取连续的牌序列
         draggedSequence = GetDraggableSequence();
         
-        // 保存所有牌的原始位置
+        // 保存所有牌的原始位置和尺寸
         originalPositions.Clear();
+        originalSizes.Clear();
         foreach (CardDisplay card in draggedSequence)
         {
             originalPositions.Add(card.transform.position);
+            originalSizes.Add(card.GetComponent<RectTransform>().sizeDelta);
         }
         
         // 设置所有被拖拽的牌
@@ -225,6 +228,8 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 CardDisplay card = draggedSequence[i];
                 card.transform.SetParent(startParent, false);
                 card.transform.position = originalPositions[i];
+                card.transform.localScale = Vector3.one;
+                card.GetComponent<RectTransform>().sizeDelta = new Vector2(46f, 70f);
                 card.canvasGroup.blocksRaycasts = true;
                 card.canvasGroup.alpha = 1f;
             }
@@ -243,6 +248,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         
         draggedSequence.Clear();
         originalPositions.Clear();
+        originalSizes.Clear();
     }
     
     public List<CardDisplay> GetDraggedSequence()
