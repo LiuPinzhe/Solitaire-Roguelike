@@ -111,24 +111,19 @@ public class DamageCalculationUI : MonoBehaviour
         // 清理之前的卡牌
         ClearDisplayedCards();
         
+        StartCoroutine(AnimateCardsFromRight(sequence));
+    }
+    
+    System.Collections.IEnumerator AnimateCardsFromRight(List<CardDisplay> sequence)
+    {
         int cardCount = sequence.Count;
-        float containerWidth = cardDisplayContainer.GetComponent<RectTransform>().rect.width;
         
         // 根据卡牌数量调整间距
         float cardWidth = 80f;
-        float maxSpacing = 35f;
-        float minSpacing = 35f;
+        float spacing = 35f;
         
-        // 计算每行卡牌数和间距
+        // 计算每行卡牌数
         int cardsPerRow = Mathf.Min(6, cardCount);
-        float totalWidth = cardsPerRow * cardWidth + (cardsPerRow - 1) * maxSpacing;
-        
-        // 如果超出容器宽度，减少间距
-        float spacing = maxSpacing;
-        if (totalWidth > containerWidth)
-        {
-            spacing = Mathf.Max(minSpacing, (containerWidth - cardsPerRow * cardWidth) / (cardsPerRow - 1));
-        }
         
         for (int i = 0; i < cardCount; i++)
         {
@@ -143,17 +138,32 @@ public class DamageCalculationUI : MonoBehaviour
                 RectTransform cardRect = cardObj.GetComponent<RectTransform>();
                 cardRect.sizeDelta = new Vector2(cardWidth, 120f);
                 
-                // 计算位置
-                int row = i / cardsPerRow;
-                int col = i % cardsPerRow;
+                // 设置锚点为左上角，类似于tableau列
+                cardRect.anchorMin = new Vector2(0f, 1f);
+                cardRect.anchorMax = new Vector2(0f, 1f);
+                cardRect.pivot = new Vector2(0f, 1f);
                 
-                float startX = -(cardsPerRow - 1) * spacing / 2f;
-                Vector2 targetPos = new Vector2(startX + col * (cardWidth + spacing), -row * 130f);
+                // 计算目标位置：从左到右按间距排列，统一Y位置
+                Vector2 targetPos = new Vector2(i * spacing, 0f);
                 
-                // 直接设置位置
-                cardRect.anchoredPosition = targetPos;
+                // 设置初始位置（从右侧飞入）
+                Vector2 startPos = new Vector2(500f, 0f);
+                cardRect.anchoredPosition = startPos;
+                
+                // 设置正确的层级顺序（在动画前设置）
+                cardObj.transform.SetSiblingIndex(i);
+                
+                // 动画到目标位置
+                cardRect.DOAnchorPos(targetPos, 0.4f)
+                    .SetEase(Ease.OutBack)
+                    .SetDelay(i * 0.08f);
+                
+                // 等待一小段时间再发下一张牌
+                yield return new WaitForSeconds(0.08f);
             }
         }
+        
+        yield return null;
     }
     
     void ClearDisplayedCards()
