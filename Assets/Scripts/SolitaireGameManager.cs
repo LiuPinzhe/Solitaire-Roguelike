@@ -510,9 +510,8 @@ public class SolitaireGameManager : MonoBehaviour
     
     public void StartNextLevel()
     {
-        ClearAllCards();
-        deck.ShuffleDeck();
-        InitializeGame();
+        // Use same reset logic as reset button
+        ResetGame();
     }
     
     void InitializeHandArea()
