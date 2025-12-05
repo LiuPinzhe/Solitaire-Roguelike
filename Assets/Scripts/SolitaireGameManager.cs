@@ -374,11 +374,16 @@ public class SolitaireGameManager : MonoBehaviour
         }
         
         Card topCard = column[column.Count - 1].GetCard();
-        bool correctRank = (int)card.rank == (int)topCard.rank - 1;
+        bool normalRule = (int)card.rank == (int)topCard.rank - 1; // 正常规则：小1
         
-        Debug.Log($"Trying to move {card.GetCardName()} to {topCard.GetCardName()}: correctRank={correctRank}");
+        // 森林卡牌特殊规则：可以接在比它小1的卡牌下面
+        bool forestRule = card.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1;
         
-        return correctRank;
+        bool canPlace = normalRule || forestRule;
+        
+        Debug.Log($"Trying to move {card.GetCardName()} to {topCard.GetCardName()}: normalRule={normalRule}, forestRule={forestRule}, canPlace={canPlace}");
+        
+        return canPlace;
     }
     
     public bool IsGameWon()
