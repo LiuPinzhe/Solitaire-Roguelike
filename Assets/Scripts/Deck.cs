@@ -21,6 +21,7 @@ public class Deck : MonoBehaviour
         
         LoadClassicCards();
         LoadForestCards();
+        LoadSpaceCards();
         
         Debug.Log("Deck initialized with " + cards.Count + " cards");
     }
@@ -105,6 +106,47 @@ public class Deck : MonoBehaviour
             }
             
             Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Forest/Backsides/Classic");
+            cards.Add(newCard);
+        }
+    }
+    
+    void LoadSpaceCards()
+    {
+        Sprite[] allSprites = Resources.LoadAll<Sprite>("Space/SpaceCards");
+        Debug.Log("Found " + allSprites.Length + " sprites in Space folder");
+        
+        if (allSprites.Length == 0)
+        {
+            Debug.LogError("No sprites found in Resources/Space/SpaceCards!");
+            return;
+        }
+        
+        // 按sprite名称排序确保正确顺序
+        System.Array.Sort(allSprites, (x, y) => {
+            int xNum = int.Parse(x.name.Replace("SpaceCards_", ""));
+            int yNum = int.Parse(y.name.Replace("SpaceCards_", ""));
+            return xNum.CompareTo(yNum);
+        });
+        
+        for (int i = 0; i < 52 && i < allSprites.Length; i++)
+        {
+            Sprite cardSprite = allSprites[i];
+            
+            // 根据sprite名称中的数字确定卡牌
+            string spriteName = cardSprite.name;
+            int spriteIndex = int.Parse(spriteName.Replace("SpaceCards_", ""));
+            
+            // 使用相同的映射逻辑
+            int rank = (spriteIndex / 2) % 13 + 1;
+            int suit;
+            
+            if (spriteIndex < 26) {
+                suit = (spriteIndex % 2 == 0) ? 0 : 3; // 0=红心, 3=黑桃
+            } else {
+                suit = ((spriteIndex - 26) % 2 == 0) ? 2 : 1; // 2=草花, 1=方片
+            }
+            
+            Card newCard = new Card((Card.Suit)suit, (Card.Rank)rank, cardSprite, "Space/Backsides/Classic");
             cards.Add(newCard);
         }
     }

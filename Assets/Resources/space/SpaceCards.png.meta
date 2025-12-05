@@ -1,0 +1,1469 @@
+fileFormatVersion: 2
+guid: a3587ea9433760b4da4d9ba5739ea71e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8978955818880599079
+    second: SpaceCards_0
+  - first:
+      213: 9106559403813503173
+    second: SpaceCards_1
+  - first:
+      213: 7579101646749115259
+    second: SpaceCards_2
+  - first:
+      213: 2102438883242264591
+    second: SpaceCards_3
+  - first:
+      213: 8971887957312711942
+    second: SpaceCards_4
+  - first:
+      213: 6052864785544795127
+    second: SpaceCards_5
+  - first:
+      213: -8949896810699759848
+    second: SpaceCards_6
+  - first:
+      213: -1316019824867292115
+    second: SpaceCards_7
+  - first:
+      213: 7696726348230911910
+    second: SpaceCards_8
+  - first:
+      213: -921796388743144806
+    second: SpaceCards_9
+  - first:
+      213: 7603122844297750593
+    second: SpaceCards_10
+  - first:
+      213: -693816510163654106
+    second: SpaceCards_11
+  - first:
+      213: -846857447534918371
+    second: SpaceCards_12
+  - first:
+      213: 3246484405179486009
+    second: SpaceCards_13
+  - first:
+      213: 6785141991467831543
+    second: SpaceCards_14
+  - first:
+      213: 1797936782827065634
+    second: SpaceCards_15
+  - first:
+      213: 1591210214913872003
+    second: SpaceCards_16
+  - first:
+      213: 8762285503211515913
+    second: SpaceCards_17
+  - first:
+      213: -6418075319096462228
+    second: SpaceCards_18
+  - first:
+      213: -8474524692780421438
+    second: SpaceCards_19
+  - first:
+      213: 7917522320483607091
+    second: SpaceCards_20
+  - first:
+      213: -3430503398257336061
+    second: SpaceCards_21
+  - first:
+      213: 2042331512018300887
+    second: SpaceCards_22
+  - first:
+      213: -6467366388063800894
+    second: SpaceCards_23
+  - first:
+      213: -7151998717082675965
+    second: SpaceCards_24
+  - first:
+      213: -6216493148707474958
+    second: SpaceCards_25
+  - first:
+      213: -460453962666665715
+    second: SpaceCards_26
+  - first:
+      213: -4891871199954724942
+    second: SpaceCards_27
+  - first:
+      213: 8916252514668952981
+    second: SpaceCards_28
+  - first:
+      213: 8901475926242047949
+    second: SpaceCards_29
+  - first:
+      213: 5081998930823158217
+    second: SpaceCards_30
+  - first:
+      213: 6162335668117722913
+    second: SpaceCards_31
+  - first:
+      213: -3598819997028808990
+    second: SpaceCards_32
+  - first:
+      213: 3170884448248817789
+    second: SpaceCards_33
+  - first:
+      213: 1214470015068844274
+    second: SpaceCards_34
+  - first:
+      213: 7419060202019591917
+    second: SpaceCards_35
+  - first:
+      213: -8508994628070608005
+    second: SpaceCards_36
+  - first:
+      213: 1341718036159824363
+    second: SpaceCards_37
+  - first:
+      213: 3279335305911746094
+    second: SpaceCards_38
+  - first:
+      213: 1195359535491807643
+    second: SpaceCards_39
+  - first:
+      213: 1004266989668424916
+    second: SpaceCards_40
+  - first:
+      213: -2267791306208733028
+    second: SpaceCards_41
+  - first:
+      213: -6243650480563581991
+    second: SpaceCards_42
+  - first:
+      213: -6494398547473809852
+    second: SpaceCards_43
+  - first:
+      213: 1106439641439912676
+    second: SpaceCards_44
+  - first:
+      213: 6972780607519683310
+    second: SpaceCards_45
+  - first:
+      213: 4316881759332509841
+    second: SpaceCards_46
+  - first:
+      213: 6359853376641011700
+    second: SpaceCards_47
+  - first:
+      213: -7458346519255239806
+    second: SpaceCards_48
+  - first:
+      213: 4636362335375850133
+    second: SpaceCards_49
+  - first:
+      213: -1852915885372563254
+    second: SpaceCards_50
+  - first:
+      213: 6450079011386749556
+    second: SpaceCards_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpaceCards_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 107
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7240e46aeb8ab9c70800000000000000
+      internalID: 8978955818880599079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c00c46778ff06e70800000000000000
+      internalID: 9106559403813503173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b732f0bbac06e2960800000000000000
+      internalID: 7579101646749115259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_3
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08cf9d660d5d2d10800000000000000
+      internalID: 2102438883242264591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60daa34ef8c828c70800000000000000
+      internalID: 8971887957312711942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f35ed7f378100450800000000000000
+      internalID: 6052864785544795127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81fd6dde4449bc380800000000000000
+      internalID: -8949896810699759848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2cc96d11fe8cbde0800000000000000
+      internalID: -1316019824867292115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a761bfa5d340da60800000000000000
+      internalID: 7696726348230911910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a1abd711f1533f0800000000000000
+      internalID: -921796388743144806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_10
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148660e91f7b38960800000000000000
+      internalID: 7603122844297750593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_11
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ae46c5f811f56f0800000000000000
+      internalID: -693816510163654106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_12
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15894863ab5f34f0800000000000000
+      internalID: -846857447534918371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f819bad54dd0d20800000000000000
+      internalID: 3246484405179486009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_14
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0d60821baa92e50800000000000000
+      internalID: 6785141991467831543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_15
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22114056afd83f810800000000000000
+      internalID: 1797936782827065634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_16
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3801ae6824d151610800000000000000
+      internalID: 1591210214913872003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_17
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9003a779d34e99970800000000000000
+      internalID: 8762285503211515913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_18
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c64bd8f608a6ee6a0800000000000000
+      internalID: -6418075319096462228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_19
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ceeb8e11b0746a80800000000000000
+      internalID: -8474524692780421438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_20
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 332e6a50a90b0ed60800000000000000
+      internalID: 7917522320483607091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_21
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301e91ab5576460d0800000000000000
+      internalID: -3430503398257336061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_22
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 107
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dfef6f70b1d75c10800000000000000
+      internalID: 2042331512018300887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_23
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 71
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1f72f198c4f36a0800000000000000
+      internalID: -6467366388063800894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_24
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 107
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305dc3a4f0ffebc90800000000000000
+      internalID: -7151998717082675965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_25
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 71
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f134aaea649ab9a0800000000000000
+      internalID: -6216493148707474958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0915df7f832c99f0800000000000000
+      internalID: -460453962666665715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b71cb7df059c1cb0800000000000000
+      internalID: -4891871199954724942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_28
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59db688fb64ecbb70800000000000000
+      internalID: 8916252514668952981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_29
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc739506135688b70800000000000000
+      internalID: 8901475926242047949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_30
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c911ac1a13e68640800000000000000
+      internalID: 5081998930823158217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_31
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12750e404a3058550800000000000000
+      internalID: 6162335668117722913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_32
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e68682b74c6e0ec0800000000000000
+      internalID: -3598819997028808990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_33
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d786ea90b9e310c20800000000000000
+      internalID: 3170884448248817789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_34
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0ba8e4b0aaad010800000000000000
+      internalID: 1214470015068844274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_35
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de69d9422fbc5f660800000000000000
+      internalID: 7419060202019591917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_36
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b73f426e77af9e980800000000000000
+      internalID: -8508994628070608005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_37
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be18a06f17dbe9210800000000000000
+      internalID: 1341718036159824363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_38
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e3448061a828d20800000000000000
+      internalID: 3279335305911746094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_39
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b997ddb0a25c69010800000000000000
+      internalID: 1195359535491807643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_40
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc56da918fdfed00800000000000000
+      internalID: 1004266989668424916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_41
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9895b082df2780e0800000000000000
+      internalID: -2267791306208733028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_42
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db8f4cd7f81a59a0800000000000000
+      internalID: -6243650480563581991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_43
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44eb20c0ee24fd5a0800000000000000
+      internalID: -6494398547473809852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_44
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2cf61edfcda5f00800000000000000
+      internalID: 1106439641439912676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_45
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee271f7e40b44c060800000000000000
+      internalID: 6972780607519683310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_46
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198a06a9615a8eb30800000000000000
+      internalID: 4316881759332509841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_47
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff814a33fcb24850800000000000000
+      internalID: 6359853376641011700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_48
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 35
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28335045b51ae7890800000000000000
+      internalID: -7458346519255239806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_49
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59af312cafaa75040800000000000000
+      internalID: 4636362335375850133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_50
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 35
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac0a0b5c1de1946e0800000000000000
+      internalID: -1852915885372563254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceCards_51
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 472f8e6dfa8438950800000000000000
+      internalID: 6450079011386749556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpaceCards_0: 8978955818880599079
+      SpaceCards_1: 9106559403813503173
+      SpaceCards_10: 7603122844297750593
+      SpaceCards_11: -693816510163654106
+      SpaceCards_12: -846857447534918371
+      SpaceCards_13: 3246484405179486009
+      SpaceCards_14: 6785141991467831543
+      SpaceCards_15: 1797936782827065634
+      SpaceCards_16: 1591210214913872003
+      SpaceCards_17: 8762285503211515913
+      SpaceCards_18: -6418075319096462228
+      SpaceCards_19: -8474524692780421438
+      SpaceCards_2: 7579101646749115259
+      SpaceCards_20: 7917522320483607091
+      SpaceCards_21: -3430503398257336061
+      SpaceCards_22: 2042331512018300887
+      SpaceCards_23: -6467366388063800894
+      SpaceCards_24: -7151998717082675965
+      SpaceCards_25: -6216493148707474958
+      SpaceCards_26: -460453962666665715
+      SpaceCards_27: -4891871199954724942
+      SpaceCards_28: 8916252514668952981
+      SpaceCards_29: 8901475926242047949
+      SpaceCards_3: 2102438883242264591
+      SpaceCards_30: 5081998930823158217
+      SpaceCards_31: 6162335668117722913
+      SpaceCards_32: -3598819997028808990
+      SpaceCards_33: 3170884448248817789
+      SpaceCards_34: 1214470015068844274
+      SpaceCards_35: 7419060202019591917
+      SpaceCards_36: -8508994628070608005
+      SpaceCards_37: 1341718036159824363
+      SpaceCards_38: 3279335305911746094
+      SpaceCards_39: 1195359535491807643
+      SpaceCards_4: 8971887957312711942
+      SpaceCards_40: 1004266989668424916
+      SpaceCards_41: -2267791306208733028
+      SpaceCards_42: -6243650480563581991
+      SpaceCards_43: -6494398547473809852
+      SpaceCards_44: 1106439641439912676
+      SpaceCards_45: 6972780607519683310
+      SpaceCards_46: 4316881759332509841
+      SpaceCards_47: 6359853376641011700
+      SpaceCards_48: -7458346519255239806
+      SpaceCards_49: 4636362335375850133
+      SpaceCards_5: 6052864785544795127
+      SpaceCards_50: -1852915885372563254
+      SpaceCards_51: 6450079011386749556
+      SpaceCards_6: -8949896810699759848
+      SpaceCards_7: -1316019824867292115
+      SpaceCards_8: 7696726348230911910
+      SpaceCards_9: -921796388743144806
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
