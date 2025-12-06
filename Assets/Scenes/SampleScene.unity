@@ -2588,6 +2588,7 @@ MonoBehaviour:
   activateRoyalBlood: 1
   activateSpadeCritical: 1
   activateForestPower: 1
+  activateSkipChain: 1
 --- !u!4 &1254723800
 Transform:
   m_ObjectHideFlags: 0

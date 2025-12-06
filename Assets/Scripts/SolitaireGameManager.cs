@@ -442,6 +442,16 @@ public class SolitaireGameManager : MonoBehaviour
         Card topCard = column[column.Count - 1].GetCard();
         bool normalRule = (int)card.rank == (int)topCard.rank - 1; // 正常规则：小1
         
+        // 隔一个接龙技能
+        bool skipRule = false;
+        if (PassiveSkillManager.Instance != null)
+        {
+            var skills = PassiveSkillManager.Instance.GetActiveSkills();
+            bool hasSkipChain = skills.Exists(s => s is SkipChainSkill);
+            if (hasSkipChain)
+                skipRule = (int)card.rank == (int)topCard.rank - 2;
+        }
+        
         // 森林卡牌双向规则：森林卡可以接在±1的卡牌下面，其他卡也可以接在森林卡的±1位置
         bool forestRule = (card.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1) ||
                          (topCard.set == "Forest/Backsides/Classic" && (int)card.rank == (int)topCard.rank + 1);
@@ -453,7 +463,7 @@ public class SolitaireGameManager : MonoBehaviour
         // S02万能卡规则：S02可以接在任何卡下面，任何卡也可以接在S02下面
         bool s02Rule = card.set == "S02" || topCard.set == "S02";
         
-        bool canPlace = normalRule || forestRule || fireRule || s02Rule;
+        bool canPlace = normalRule || skipRule || forestRule || fireRule || s02Rule;
         
         Debug.Log($"Trying to move {card.GetCardName()} to {topCard.GetCardName()}: normalRule={normalRule}, forestRule={forestRule}, canPlace={canPlace}");
         

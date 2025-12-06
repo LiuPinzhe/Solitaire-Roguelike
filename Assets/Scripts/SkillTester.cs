@@ -7,6 +7,7 @@ public class SkillTester : MonoBehaviour
     [SerializeField] private bool activateRoyalBlood = false;
     [SerializeField] private bool activateSpadeCritical = false;
     [SerializeField] private bool activateForestPower = false;
+    [SerializeField] private bool activateSkipChain = false;
     
     void Start()
     {
@@ -34,6 +35,9 @@ public class SkillTester : MonoBehaviour
             
         if (activateForestPower)
             ActivateSkill("Skills/ForestPower");
+            
+        if (activateSkipChain)
+            ActivateSkill("Skills/SkipChain");
     }
     
     void ActivateSkill(string path)

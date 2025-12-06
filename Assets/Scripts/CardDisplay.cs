@@ -307,6 +307,16 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                             CardDisplay prevCard = sequence[sequence.Count - 1];
                             bool normalSequence = (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 1;
                             
+                            // 隔一个接龙技能
+                            bool skipSequence = false;
+                            if (PassiveSkillManager.Instance != null)
+                            {
+                                var skills = PassiveSkillManager.Instance.GetActiveSkills();
+                                bool hasSkipChain = skills.Exists(s => s is SkipChainSkill);
+                                if (hasSkipChain)
+                                    skipSequence = (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank - 2;
+                            }
+                            
                             // 森林卡双向序列：森林卡可以接+1，其他卡也可以接在森林卡的+1位置
                             bool forestSequence = (prevCard.GetCard().set == "Forest/Backsides/Classic" && 
                                                   (int)currentCard.GetCard().rank == (int)prevCard.GetCard().rank + 1) ||
@@ -322,7 +332,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                             // S02万能卡序列：S02可以连接任何卡牌
                             bool s02Sequence = currentCard.GetCard().set == "S02" || prevCard.GetCard().set == "S02";
                             
-                            if (normalSequence || forestSequence || fireSequence || s02Sequence)
+                            if (normalSequence || skipSequence || forestSequence || fireSequence || s02Sequence)
                             {
                                 sequence.Add(currentCard);
                             }
@@ -358,6 +368,16 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 {
                     bool normalSequence = (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank - 1;
                     
+                    // 隔一个接龙技能
+                    bool skipSequence = false;
+                    if (PassiveSkillManager.Instance != null)
+                    {
+                        var skills = PassiveSkillManager.Instance.GetActiveSkills();
+                        bool hasSkipChain = skills.Exists(s => s is SkipChainSkill);
+                        if (hasSkipChain)
+                            skipSequence = (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank - 2;
+                    }
+                    
                     // 森林卡双向检查
                     bool forestSequence = (col[j].GetCard().set == "Forest/Backsides/Classic" && 
                                           (int)col[j + 1].GetCard().rank == (int)col[j].GetCard().rank + 1) ||
@@ -373,7 +393,7 @@ public class CardDisplay : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                     // S02万能卡规则：S02可以连接任何卡牌
                     bool s02Sequence = col[j].GetCard().set == "S02" || col[j + 1].GetCard().set == "S02";
                     
-                    if (!normalSequence && !forestSequence && !fireSequence && !s02Sequence)
+                    if (!normalSequence && !skipSequence && !forestSequence && !fireSequence && !s02Sequence)
                         return false;
                 }
                 return true;
