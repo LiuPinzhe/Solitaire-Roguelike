@@ -60,9 +60,14 @@ public class EnemyDropZone : MonoBehaviour, IDropHandler
         int chainLength = sequence.Count;
         int headRank = (int)sequence[0].GetCard().rank;
         
-        int damage = headRank * chainLength;
+        int baseDamage = headRank * chainLength;
         
-        return damage;
+        // 应用被动技能
+        PassiveSkillManager skillManager = PassiveSkillManager.Instance;
+        if (skillManager != null)
+            baseDamage = skillManager.ModifyDamage(sequence, baseDamage);
+        
+        return baseDamage;
     }
     
     void RemoveCardSequence(List<CardDisplay> sequence)

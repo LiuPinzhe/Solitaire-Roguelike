@@ -141,6 +141,13 @@ public class Enemy : MonoBehaviour
             StopCoroutine(currentAnimation);
         }
         
+        // 触发被动技能
+        PassiveSkillManager skillManager = PassiveSkillManager.Instance;
+        if (skillManager != null)
+        {
+            skillManager.TriggerEnemyKilled(this);
+        }
+        
         // 显示奖励界面
         RewardManager rewardManager = FindObjectOfType<RewardManager>();
         if (rewardManager != null)
