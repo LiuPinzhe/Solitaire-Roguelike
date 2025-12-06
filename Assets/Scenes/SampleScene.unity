@@ -2584,11 +2584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8272423fb15491f4aa1256b2bd15095d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateComboMaster: 1
-  activateRoyalBlood: 1
-  activateSpadeCritical: 1
-  activateForestPower: 1
-  activateSkipChain: 1
+  activateComboMaster: 0
+  activateRoyalBlood: 0
+  activateSpadeCritical: 0
+  activateForestPower: 0
+  activateSkipChain: 0
 --- !u!4 &1254723800
 Transform:
   m_ObjectHideFlags: 0
