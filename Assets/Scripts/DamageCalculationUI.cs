@@ -58,8 +58,10 @@ public class DamageCalculationUI : MonoBehaviour
         
         int chainLength = sequence.Count;
         int headRank = (int)sequence[0].GetCard().rank;
+        int baseDamage = headRank * chainLength;
+        int skillBonus = totalDamage - baseDamage;
         
-        Debug.Log($"Calculated: headRank={headRank}, chainLength={chainLength}, total={totalDamage}");
+        Debug.Log($"Calculated: headRank={headRank}, chainLength={chainLength}, base={baseDamage}, bonus={skillBonus}, total={totalDamage}");
         
         // 重置所有文本
         if (chainLengthText != null) chainLengthText.text = "";
@@ -76,14 +78,23 @@ public class DamageCalculationUI : MonoBehaviour
         canvasGroup.DOFade(1f, 0.3f);
         yield return new WaitForSeconds(0.5f);
         
-        // 显示计算公式
+        // 显示基础计算公式
         if (chainLengthText != null)
         {
             chainLengthText.text = $"{headRank} × {chainLength}";
             chainLengthText.color = Color.cyan;
-            Debug.Log($"Set chainLengthText: {chainLengthText.text}");
         }
         yield return new WaitForSeconds(0.8f);
+        
+        // 显示技能加成
+        if (skillBonus > 0 && bonusText != null)
+        {
+            bonusText.text = $"+ {skillBonus} (技能加成)";
+            bonusText.color = Color.yellow;
+            bonusText.transform.localScale = Vector3.zero;
+            bonusText.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
+            yield return new WaitForSeconds(0.6f);
+        }
         
         // 显示总伤害
         if (totalDamageText != null)
@@ -92,9 +103,8 @@ public class DamageCalculationUI : MonoBehaviour
             totalDamageText.color = Color.green;
             totalDamageText.transform.localScale = Vector3.zero;
             totalDamageText.transform.DOScale(1.2f, 0.3f).SetEase(Ease.OutBack);
-            Debug.Log($"Set totalDamageText: {totalDamageText.text}");
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.2f);
         
         // 卡牌飞向敌人，等待完成后再淡出面板
         yield return StartCoroutine(AnimateCardsToEnemy());
