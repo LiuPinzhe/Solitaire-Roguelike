@@ -185,10 +185,14 @@ public class AbilityManager : MonoBehaviour
                 // 插入到数据列表
                 tableau[col].Insert(targetIndex + 1, s02Display);
                 
-                // 设置正确的Transform层级顺序
-                s02Display.transform.SetSiblingIndex(targetIndex + 1);
-                
+                // 重新排列位置
                 gameManager.RearrangeColumn(col);
+                
+                // 重新设置所有卡牌的层级顺序（slot在index 0，卡牌从1开始）
+                for (int i = 0; i < tableau[col].Count; i++)
+                {
+                    tableau[col][i].transform.SetSiblingIndex(i + 1);
+                }
                 break;
             }
         }
